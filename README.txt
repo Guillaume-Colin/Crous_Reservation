@@ -1,4 +1,4 @@
-Informations sur la BD :
+Informations BD :
 host : localhost,
 port : 8889,
 dbname : php,
