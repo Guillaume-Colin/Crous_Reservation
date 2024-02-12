@@ -14,7 +14,7 @@
   <center> 
     <h1>Lombarderie</h1>
     <h2>Restaurant universitaire</h2>
-    <p>Un restaurant compris dans le campus de la Lombarderie Ã  deux pas du tram (Ligne 2).</p>
+    <p>Un restaurant compris dans le campus de la Lombarderie a deux pas du tram (Ligne 2).</p>
     <h2>Date</h2>
     <div class="rectangle">
       <input type="date">
