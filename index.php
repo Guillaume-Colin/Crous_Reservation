@@ -34,18 +34,23 @@ if (is_post())
     }
 }
 
-require_once('./inc/config.php');
-if (authentificate_user($login, $mdp))
-{
-    $_SESSION['login']= $login;
-    $_SESSION['time']= time();
-    redirect('bienvenue.php');
-}
-else
-{
-    view('login',null,null);
-}
-    // f($url())
+// require_once('./inc/config.php');
+// if (authentificate_user($login, $mdp))
+// {
+//     $_SESSION['login']= $login;
+//     $_SESSION['time']= time();
+//     redirect('bienvenue.php');
+// }
+// else
+// {
+//     view('login',null,null);
+// }
+  
+
+
+
+
+// f($url())
     // header("Location:$url");
 
  // header (Location);
