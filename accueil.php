@@ -7,14 +7,15 @@
 </head>
 <body>
     <?php
-    
-function view2($name)
-{
-    include("./src/Views/$name.view.php");
-}
-require 'src/Views/navbar.view.php';
 
-view2('horaire');
+    require_once './inc/functions_db.php';
+    require_once './inc/functions.php';
+
+
+    $tabResto = [];
+    $tabResto = search_db('SELECT id_restoCrous, nom_resto FROM resto_crous');
+    view('accueil', $tabResto);
+
 
 ?>
 </body>
