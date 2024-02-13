@@ -12,34 +12,34 @@ function redirect($url)
 }
 
 
-function authentificate_user($email, $password)
-{
-    return $login == LOGIN && $password == PASSWORD;
-}
-function is_user_authentificated()
-{
-    return isset($_SESSION['login']); 
+// function authentificate_user($email, $password)
+// {
+//     return $login == LOGIN && $password == PASSWORD;
+// }
+// function is_user_authentificated()
+// {
+//     return isset($_SESSION['login']); 
 
-}
+// }
 
-function ensure_user_is_authentificated()
-{
-    if(!is_user_authentificated())
-    {
-        redirect("Location:login.php");
-        die();
-    }
-}
+// function ensure_user_is_authentificated()
+// {
+//     if(!is_user_authentificated())
+//     {
+//         redirect("Location:login.php");
+//         die();
+//     }
+// }
 
-function showArray($tab){
-    echo "<pre>";
-    print_r($tab);
-    echo "</pre>";
-}
+// function showArray($tab){
+//     echo "<pre>";
+//     print_r($tab);
+//     echo "</pre>";
+// }
 
-function sanitize($arg) : string {
-    return htmlspecialchars($arg);
-}
+// function sanitize($arg) : string {
+//     return htmlspecialchars($arg);
+// }
 
 function view($name,$param = null)
 {
