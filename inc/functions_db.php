@@ -15,7 +15,7 @@ function connect_db()
 
 
 
-function search_db()
+function search_db($requete)
 {
     // étape 1
     $db = connect_db();
@@ -24,9 +24,9 @@ function search_db()
     }
     try {
         // étape 2
-        $sql = 'SELECT * FROM article'; // Correction de la requête SQL
+        //$sql = 'SELECT * FROM article'; // Correction de la requête SQL
 
-        $smt = $db->prepare($sql);
+        $smt = $db->prepare($requete);
 
         $smt->execute();
 
@@ -44,4 +44,4 @@ function search_db()
     }
 }
 
-search_db();
+// search_db('SELECT * FROM article');
