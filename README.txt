@@ -10,10 +10,10 @@ charset : utf8
 Pour se connecter à l'application : 
 - Utilisateur test 
         login : E223029G (Alice DUBOIS)
-        mdp : 
+        mdp : 123
 - Personnel test 
         login : P162535T (John DOE)
-        mdp : 
+        mdp : 123
 - Administrateur test 
         login : C203912F (Maria GARCIA)
-        mdp : 
+        mdp : 123

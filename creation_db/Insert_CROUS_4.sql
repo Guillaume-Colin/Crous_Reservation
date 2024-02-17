@@ -1,23 +1,23 @@
-INSERT INTO Personne (id_personne, nom, prenom, role)
+INSERT INTO Personne (id_personne, nom, prenom, role, mdp)
 VALUES
-    ("E223029G", 'Dubois', 'Alice', 'Etudiant'),
-    ("E224329B", 'Lefevre', 'Martin', 'Etudiant'),
-    ("E225142I", 'Mercier', 'Camille', 'Etudiant'),
-    ("E193045U", 'Girard', 'Théo', 'Etudiant'),
-    ("E204615J", 'Leroy', 'Emma', 'Etudiant'),
-    ("E225457X", 'Lambert', 'Hugo', 'Etudiant'),
-    ("E227821Y", 'Moreau', 'Manon', 'Etudiant'),
-    ("E183029C", 'Laurent', 'Lucas', 'Etudiant'),
-    ("E223045D", 'Rousseau', 'Léa', 'Etudiant'),
-    ("E214029G", 'Gauthier', 'Nathan', 'Etudiant'),
-    ('P162535T', 'Doe', 'John', 'Professeur'),
-    ('P186543F', 'Smith', 'Emily', 'Professeur'),
-    ('P205484Y', 'Johnson', 'Alex', 'Professeur'),
-    ('P143287K', 'Williams', 'Sophie', 'Professeur'),
-    ('P215648N', 'Brown', 'Michael', 'Professeur'),
-    ('C203912F', 'Garcia', 'Maria', 'Personnel'),
-    ('C203219T', 'Martin', 'Antoine', 'Personnel'),
-    ('C162032K', 'Dubois', 'Claire', 'Personnel');
+    ("E223029G", 'Dubois', 'Alice', 'Etudiant','123'),
+    ("E224329B", 'Lefevre', 'Martin', 'Etudiant','123'),
+    ("E225142I", 'Mercier', 'Camille', 'Etudiant','123'),
+    ("E193045U", 'Girard', 'Théo', 'Etudiant','123'),
+    ("E204615J", 'Leroy', 'Emma', 'Etudiant','123'),
+    ("E225457X", 'Lambert', 'Hugo', 'Etudiant','123'),
+    ("E227821Y", 'Moreau', 'Manon', 'Etudiant','123'),
+    ("E183029C", 'Laurent', 'Lucas', 'Etudiant','123'),
+    ("E223045D", 'Rousseau', 'Léa', 'Etudiant','123'),
+    ("E214029G", 'Gauthier', 'Nathan', 'Etudiant','123'),
+    ('P162535T', 'Doe', 'John', 'Professeur','123'),
+    ('P186543F', 'Smith', 'Emily', 'Professeur','123'),
+    ('P205484Y', 'Johnson', 'Alex', 'Professeur','123'),
+    ('P143287K', 'Williams', 'Sophie', 'Professeur','123'),
+    ('P215648N', 'Brown', 'Michael', 'Professeur','123'),
+    ('C203912F', 'Garcia', 'Maria', 'Personnel','123'),
+    ('C203219T', 'Martin', 'Antoine', 'Personnel','123'),
+    ('C162032K', 'Dubois', 'Claire', 'Personnel','123');
 
 INSERT INTO Porteur_de_carte (id_personne, nom, prenom, role)
 VALUES
@@ -252,6 +252,19 @@ VALUES
     ('C203219T', 17),
     ('C162032K', 18);
 
+INSERT INTO date_menu(date_menu)
+VALUES
+    ('2023-12-01'),
+    ('2023-12-05'),
+    ('2023-12-10'),
+    ('2023-12-15'),
+    ('2023-12-20'),
+    ('2023-12-25'),
+    ('2023-12-30'),
+    ('2023-01-04'),
+    ('2023-01-09'),
+    ('2023-01-14');
+
 INSERT INTO propose (id_menu, id_restoCrous, date_menu)
 VALUES
     (6, 16,'2023-12-01'), 
@@ -296,18 +309,6 @@ VALUES
     ('2023-01-09',false),
     ('2023-01-14', false);
     
-INSERT INTO date_menu(date_menu)
-VALUES
-    ('2023-12-01'),
-    ('2023-12-05'),
-    ('2023-12-10'),
-    ('2023-12-15'),
-    ('2023-12-20'),
-    ('2023-12-25'),
-    ('2023-12-30'),
-    ('2023-01-04'),
-    ('2023-01-09'),
-    ('2023-01-14');
 
 INSERT INTO possede (id_restoCrous, id_article, stock)
 VALUES

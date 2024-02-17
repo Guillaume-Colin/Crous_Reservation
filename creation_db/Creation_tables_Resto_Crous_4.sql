@@ -12,14 +12,6 @@ CREATE TABLE Resto_Crous (
     horaire_fermeture TIME
 );
 
--- Création de la table travaille
-CREATE TABLE travaille (
-    id_restoCrous INT,
-    id_personne VARCHAR(15),
-    FOREIGN KEY (id_restoCrous) REFERENCES Resto_Crous(Id_restoCrous),
-    FOREIGN KEY (id_personne) REFERENCES Personnel(id_personne),
-    PRIMARY KEY (id_restoCrous, id_personne)
-);
 
 -- Création de la table Personnel
 CREATE TABLE Personnel (
@@ -29,12 +21,23 @@ CREATE TABLE Personnel (
     role VARCHAR(50) check(role='Personnel')
 );
 
+-- Création de la table travaille
+CREATE TABLE travaille (
+    id_restoCrous INT,
+    id_personne VARCHAR(15),
+    FOREIGN KEY (id_restoCrous) REFERENCES Resto_Crous(Id_restoCrous),
+    FOREIGN KEY (id_personne) REFERENCES Personnel(id_personne),
+    PRIMARY KEY (id_restoCrous, id_personne)
+);
+
+
 -- Création de la table Personne
 CREATE TABLE Personne (
     id_personne VARCHAR(8) PRIMARY KEY,
     nom VARCHAR(50),
     prenom VARCHAR(50),
-    role VARCHAR(50) CHECK (role IN ('Etudiant', 'Personnel', 'Administrateur', 'Professeur'))
+    role VARCHAR(50) CHECK (role IN ('Etudiant', 'Personnel', 'Administrateur', 'Professeur')),
+    mdp VARCHAR (50)
 );
 
 -- Création de la table Porteur_de_carte
@@ -81,6 +84,22 @@ CREATE TABLE Cafet (
 );
 
 
+-- Création de la table Menu
+CREATE TABLE Menu (
+    id_menu INT PRIMARY KEY,
+    nom_menu VARCHAR(100),
+    description_menu TEXT,
+    plat_principal VARCHAR(100),
+    entree VARCHAR(100),
+    dessert VARCHAR(100),
+    prix DECIMAL (10, 2) check(prix >= 0)
+);
+
+-- Création de la table date_menu
+CREATE TABLE date_menu (
+    date_menu DATE PRIMARY KEY
+);
+
 
 -- Création de la table propose
 CREATE TABLE propose (
@@ -93,15 +112,10 @@ CREATE TABLE propose (
     PRIMARY KEY (id_menu, id_restoCrous, date_menu)
 );
 
--- Création de la table Menu
-CREATE TABLE Menu (
-    id_menu INT PRIMARY KEY,
-    nom_menu VARCHAR(100),
-    description_menu TEXT,
-    plat_principal VARCHAR(100),
-    entree VARCHAR(100),
-    dessert VARCHAR(100),
-    prix DECIMAL (10, 2) check(prix >= 0)
+-- Création de la table Article
+CREATE TABLE Article (
+    id_article INT PRIMARY KEY,
+    nom_article VARCHAR(100)
 );
 
 -- Création de la table compose
@@ -113,11 +127,7 @@ CREATE TABLE compose (
     PRIMARY KEY (id_menu, id_article)
 );
 
--- Création de la table Article
-CREATE TABLE Article (
-    id_article INT PRIMARY KEY,
-    nom_article VARCHAR(100)
-);
+
 
 -- Création de la table possede
 CREATE TABLE possede (
@@ -144,7 +154,3 @@ CREATE TABLE RU (
     nb_place INT check(nb_place >= 0)
 );
 
--- Création de la table date_menu
-CREATE TABLE date_menu (
-    date_menu DATE PRIMARY KEY
-);
