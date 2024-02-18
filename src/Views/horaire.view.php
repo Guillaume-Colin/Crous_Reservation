@@ -17,6 +17,7 @@
  }
   </script>
 
+<?php include_once("./src/Views/navbar.view.php"); ?>
 
 <body
 <?php 
@@ -29,8 +30,6 @@
 
  <div class="container">
   <center> 
-  <?php         echo $param["submit"];        ?>
-
     <form method="POST" id="Form" 
       <?php 
         if ($param["submit"]=='O')
@@ -46,7 +45,7 @@
     <input type="hidden" name="nomResto" value="<?php echo $param["nomResto"] ?>"/>
     <input type="hidden" name="typeResto" value="<?php echo $param["typeResto"] ?>"/>
     <input type="hidden" name="descResto" value="<?php echo $param["descResto"] ?>"/>
-    <input type="hidden" name="controle" value="O"/>
+    <input type="hidden" name="controleHoraire" value="O"/>
     <h2>Date</h2>
     <div class="rectangle">
       <input type="date" name="date" value="<?php echo $param["date"] ?>">
@@ -55,10 +54,10 @@
     <div class="rectangle">
     <select name="plageHoraire">
         <option value="0" <?php if ($param['plageHoraire'] == 0) { echo 'selected'; } ?> label="Choisissez une plage horaire"></option>
-        <option value="1" <?php if ($param['plageHoraire'] == 1) { echo 'selected'; } ?> label="De 11h30 à 12h00"></option>
-        <option value="2" <?php if ($param['plageHoraire'] == 2) { echo 'selected'; } ?> label="De 12h00 à 12h30"></option>
-        <option value="3" <?php if ($param['plageHoraire'] == 3) { echo 'selected'; } ?> label="De 12h30 à 13h00"></option>
-        <option value="4" <?php if ($param['plageHoraire'] == 4) { echo 'selected'; } ?> label="De 13h00 à 13h00"></option>
+        <option value="11:30:00" <?php if ($param['plageHoraire'] == 1) { echo 'selected'; } ?> label="De 11h30 à 12h00"></option>
+        <option value="12:00:00" <?php if ($param['plageHoraire'] == 2) { echo 'selected'; } ?> label="De 12h00 à 12h30"></option>
+        <option value="12:30:00" <?php if ($param['plageHoraire'] == 3) { echo 'selected'; } ?> label="De 12h30 à 13h00"></option>
+        <option value="13:00:00" <?php if ($param['plageHoraire'] == 4) { echo 'selected'; } ?> label="De 13h00 à 13h00"></option>
     </select>
 </div>
 

@@ -104,65 +104,80 @@ select {
 
 </head>
 <body>
+  <form method="POST">
+  <input type="hidden" name="controleMenu" value="O"/>
     <div class="container">
         <div class="header">
             <h1>Choix Menu</h1>
         </div>
         <div class="rectangle">
             <div class="section-title">
-                <h3>Plat :</h3>
+                <h3>Entrées :</h3>
             </div>
-            <div class="buttons">
+            <!-- <div class="buttons">
                 <button class="button">Végétarien</button>
                 <button class="button">Button 2</button>
                 <button class="button">Button 3</button>
                 <button class="button">Button 4</button>
-            </div>
-            <select>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="4">Option 4</option>
+            </div> -->
+            <select name="entree">
+              <option value="NULL" label="Sélectionner une entrée"/>
+              <?php
+              foreach ($param["listeEntrees"] as $item)
+              {
+                $selected = $item->id_article == $param["idEntree"];
+                echo '<option value="'.$item->id_article.'" label="'.$item->nom_article.'" '.$selected.'/>';
+              }
+              ?>
             </select>
             <div class="section">
                 <div class="section-title">
-                    <h3>Entrée :</h3>
+                    <h3>Plats :</h3>
                 </div>
-                <div class="buttons">
+                <!-- <div class="buttons">
                 <button class="button">Button 1</button>
                 <button class="button">Button 2</button>
                 <button class="button">Button 3</button>
                 <button class="button">Button 4</button>
-            </div>
-                <select>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                    <option value="4">Option 4</option>
-                </select>
+            </div> -->
+            <select name="plat">
+            <option value="NULL" label="Sélectionner un plat"/>
+             <?php
+              foreach ($param["listePlats"] as $item)
+              {
+                $selected = $item->id_article == $param["idEntree"];
+                echo '<option value="'.$item->id_article.'" label="'.$item->nom_article.'" '.$selected.'/>';
+              }
+              ?>
+            </select>
             </div>
             <div class="section">
                 <div class="section-title">
-                    <h3>Dessert :</h3>
+                    <h3>Desserts :</h3>
                 </div>
-                <div class="buttons">
+                <!-- <div class="buttons">
                 <button class="button">Button 1</button>
                 <button class="button">Button 2</button>
                 <button class="button">Button 3</button>
                 <button class="button">Button 4</button>
-            </div>
-                <select>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                    <option value="4">Option 4</option>
-                </select>
+            </div> -->
+            <select name="dessert">
+            <option value="NULL" label="Sélectionner un dessert"/>
+             <?php
+              foreach ($param["listeDesserts"] as $item)
+              {
+                $selected = $item->id_article == $param["idEntree"];
+                echo '<option value="'.$item->id_article.'" label="'.$item->nom_article.'" '.$selected.'/>';
+              }
+              ?>
+            </select>
             </div>
             <div class="footer">
-                <button class="validate-button">Validate</button>
                 <button class="cancel-button">Cancel</button>
+                <button class="validate-button" type="submit">Validate</button>
             </div>
         </div>
     </div>
+    </form>
 </body>
 </html>

@@ -55,7 +55,7 @@
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 10px;
-    height: 50px; 
+    height: 100px; 
   }
 
   #sousTitre {
@@ -87,12 +87,12 @@
     border-radius: 5px;
   }
 
-  .modifier-image {
+  /* .modifier-image {
     background-image: url("../../public/img/modifier.png"); 
-  }
+  } */
 
   .supprimer-image {
-    background-image: url("../../public/img/supprimer.png"); /* Chemin vers l'image */
+    background-image: url("./public/img/supprimer.png"); /* Chemin vers l'image */
   }
 
 </style>
@@ -101,15 +101,20 @@
   <h1 id="titrePrincipal">Bienvenue sur votre espace CROUS Réservation</h1>
   <div id="grandRectangle">
     <h2 id="titre">Mes réservations :</h2>
-    <button id="bouton">
+    <a href="./Search.php"><button id="bouton"></button></a>
         
-    </button>
-    <div id="sousRectangle">
-      <h3 id="sousTitre">Sous-titre</h3>
-      <span id="date">18/02/2024</span>
-      <button class="boutonCarre modifier-image"></button>
-      <button class="boutonCarre supprimer-image"></button>
-    </div>
+    
+    <?php
+        foreach ($param["listeReservations"] as $item) {
+            echo '<div id="sousRectangle">';
+            echo '<h3>'.$item->nom_resto.' : '.$item->date_reserve.'</h3>';
+            // echo '<span id="date">'.$item->date_reserve.'</span>';
+            // echo '<button class="boutonCarre modifier-image"></button>';
+            echo '<a href="./Accueil.php?idToDelete='.$item->id_restoCrous.'|'.$item->date_reserve.'"><button class="boutonCarre supprimer-image"></button></a>';
+            echo '</div>';
+        }
+    ?>
+
   </div>
 </body>
 </html>
