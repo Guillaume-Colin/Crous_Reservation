@@ -8,9 +8,6 @@ ensure_user_is_authentificated();
     $listeResto = [];
     $nomResto = NULL;
 
-    
-    //$listeResto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE nom_resto like \'%'.'LOM'.'%\'');
-
     if(isset($_POST['nomResto']))
     {
         $nomResto = $_POST['nomResto'];
