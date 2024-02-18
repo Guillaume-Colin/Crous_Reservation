@@ -11,6 +11,15 @@ function redirect($url)
     header("Location:$url");
 }
 
+function init_php_session() : bool {
+    if (!session_id()){
+        session_start();
+        session_regenerate_id();
+        return true;
+    }
+
+    return false;
+}
 
 // function authentificate_user($email, $password)
 // {
@@ -43,8 +52,10 @@ function redirect($url)
 
 function view($name,$param = null)
 {
-    include("./src/Views/$name.view.php");
+        include("./src/Views/$name.view.php");
 }
+
+
 
 
 ?>
