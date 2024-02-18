@@ -23,6 +23,10 @@
             justify-content: space-between;
             padding: 10px 10px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000; 
         }
 
         .logo img {
@@ -56,6 +60,8 @@
         .logo img:hover{
             transform: scale(1.2); 
         }
+
+ 
     </style>
 </head>
 <body>
@@ -74,7 +80,4 @@
         </div>
     </nav>
 </body>
-</html> 
-
-
-
+</html>

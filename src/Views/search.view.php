@@ -12,15 +12,16 @@
         body {
             display: flex;
             justify-content: center;
-            align-items: center;
+            /* align-items: center; */
             /* height: 100vh; */
             margin: 0;
             font-family: "Alata", sans-serif;
             overflow-y: auto;
         }
-        /* .container {
-            text-align: center;
-        } */
+         .container {
+            /*text-align: center;*/
+            margin-top: 50px;
+        } 
 
         .search-bar {
             margin-bottom: 10px; /* Diminution de la marge pour réduire la hauteur */
@@ -71,7 +72,9 @@
         }
         
     </style>
+
 </head>
+<?php include_once("./src/Views/navbar.view.php"); ?>
 <body>
     <div class="container">
         <div class="search-bar">
@@ -81,7 +84,8 @@
     </form>
         </div>
 
-        <?php
+        <form method="POST">
+            <?php
         foreach ($param["listeRestos"] as $item) {
             echo '<div class="result-box">';
             echo '<div class="text">';
@@ -89,12 +93,13 @@
             echo '<h2>'.$item->type.'</h2>';
             echo '<p>'.$item->description_resto.'</p>';
             echo '</div>';
-            echo '<button class="reserve-button">Réserver</button>';
+            echo '<button class="reserve-button" type="submit" formaction="./horaire.php?idResto='.$item->id_restoCrous.'">Réserver</button>';
             echo '</div>';
             echo '<br/>';
             echo '<br/>';
             }
         ?>
+        </form>
 
     </div>
 </body>
