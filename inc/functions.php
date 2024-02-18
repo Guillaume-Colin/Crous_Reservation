@@ -20,11 +20,6 @@ function init_php_session() : bool {
     return false;
 }
 
-// function authentificate_user($email, $password)
-// {
-//     return $login == LOGIN && $password == PASSWORD;
-// }
-
 function is_user_authentificated()
 {
     return isset($_SESSION['login']); 
@@ -46,22 +41,10 @@ function ensure_user_is_authentificated()
     }
 }
 
-// function showArray($tab){
-//     echo "<pre>";
-//     print_r($tab);
-//     echo "</pre>";
-// }
-
-// function sanitize($arg) : string {
-//     return htmlspecialchars($arg);
-// }
-
 function view($name,$param = null)
 {
         include("./src/Views/$name.view.php");
 }
-
-
 
 
 ?>

@@ -16,7 +16,7 @@ function connect_db()
 
 function exec_request($requete)
 {
-    // étape 1
+    
     $db = connect_db();
     if ($db == null) {
         return [];
@@ -29,7 +29,7 @@ function exec_request($requete)
     } catch (Exception $e) 
     {
         return [];
-    } finally { // Utilisation de finally pour libérer les ressources
+    } finally { 
         $smt = null;
         $db = null;
     }
