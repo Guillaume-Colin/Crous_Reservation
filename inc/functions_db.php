@@ -35,4 +35,25 @@ function exec_request($requete)
     }
 }
 
+function exec_request2($requete, $params)
+{
+    // étape 1
+    $db = connect_db();
+    if ($db == null) {
+        return [];
+    }
+    try {
+        $smt = $db->prepare($requete);
+        $smt->execute($params);
+        $result = $smt->fetchAll(PDO::FETCH_OBJ);   
+        return $result;
+    } catch (Exception $e) 
+    {
+        return [];
+    } finally { // Utilisation de finally pour libérer les ressources
+        $smt = null;
+        $db = null;
+    }
+}
+
 // exec_request('SELECT * FROM article');

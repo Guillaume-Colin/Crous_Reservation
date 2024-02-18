@@ -17,7 +17,6 @@ function init_php_session() : bool {
         session_regenerate_id();
         return true;
     }
-
     return false;
 }
 
@@ -25,20 +24,27 @@ function init_php_session() : bool {
 // {
 //     return $login == LOGIN && $password == PASSWORD;
 // }
-// function is_user_authentificated()
-// {
-//     return isset($_SESSION['login']); 
 
-// }
+function is_user_authentificated()
+{
+    return isset($_SESSION['login']); 
+}
 
-// function ensure_user_is_authentificated()
-// {
-//     if(!is_user_authentificated())
-//     {
-//         redirect("Location:login.php");
-//         die();
-//     }
-// }
+function ensure_user_is_authentificated()
+{
+    if(!is_user_authentificated())
+    {
+        redirect("./index.php");
+        die();
+    }
+    else
+    {
+        $sql = 'SELECT nom, prenom FROM personne WHERE id_personne = \''.$_SESSION['login'].'\'';
+        $tabPersonnes = exec_request($sql);
+        $_SESSION['nom'] = $tabPersonnes[0]->nom;
+        $_SESSION['prenom'] = $tabPersonnes[0]->prenom;
+    }
+}
 
 // function showArray($tab){
 //     echo "<pre>";
