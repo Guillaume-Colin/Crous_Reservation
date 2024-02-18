@@ -179,8 +179,8 @@ select:hover {
             </select>
             </div>
             <div class="footer">
-                <button class="cancel-button">Cancel</button>
-                <button class="validate-button" type="submit">Validate</button>
+                <button class="cancel-button">Annuler</button>
+                <button class="validate-button" type="submit">Reserver</button>
             </div>
         </div>
     </div>

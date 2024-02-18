@@ -20,10 +20,3 @@ class Cafet extends Resto_Crous
     }
 
 }
-
-8====D
-
-un zgueg ^^
-
-c'est drole ça 
-J'ai vais prendre votre nom jeune homme
