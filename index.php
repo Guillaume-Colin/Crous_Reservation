@@ -1,17 +1,37 @@
 <?php
-function view($name)
+/*function view($name)
 {
     include("./src/Views/$name.view.php");
+}*/
+
+require_once('./inc/functions.php');
+require_once('./inc/config.php');
+require_once('./inc/functions_db.php');
+init_php_session();
+
+if(isset($_POST['valid_connection'])){
+    if(isset($_POST['username']) && !empty($_POST['username']) && 
+    isset($_POST['password']) && !empty($_POST['password'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $sql = 'SELECT * FROM personne WHERE $username = :id_personne';
+        $fields = [
+            'user_name' => $username
+        ];
+        search_db($sql);
+    }
 }
+
 view("index");
 
 
 
  
-
+/*
 session_start();
-require_once('/inc/functions.php');
-require_once('/inc/config.php');
+require_once('./inc/functions.php');
+require_once('./inc/config.php');
 
 
 
@@ -26,7 +46,7 @@ $mdp='';
 if (is_post())
 {
     $login = filter_input(INPUT_POST, 'login', FILTER_VALIDATE_EMAIL);
-    $mdp = $_POST['MDP'];
+    $mdp = $_POST['password'];
     if($email == false)
     {
         view('login');
@@ -61,7 +81,7 @@ if (is_post())
 // {
 //     redirect('')
 // }
-
+*/
 ?>
 
 
