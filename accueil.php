@@ -10,11 +10,33 @@
 
     require_once './inc/functions_db.php';
     require_once './inc/functions.php';
+    session_start();
+    $_SESSION['idPersonne']='E223029G';
 
+    if(isset($_GET['idToDelete']))
+    {
+        $idResto = explode("|",  $_GET['idToDelete'])[0];
+        $dateReserve = explode("|",  $_GET['idToDelete'])[1];
+        exec_request('DELETE FROM RESERVE 
+        WHERE id_personne = \''.$_SESSION['idPersonne'].'\'
+        AND id_restoCrous = \''.$idResto.'\'
+        AND date_reserve = \''.$dateReserve.'\''
+        );
+   }
 
-    $tabResto = [];
-    $tabResto = search_db('SELECT id_restoCrous, nom_resto FROM resto_crous');
-    view('accueil', $tabResto);
+    $tabReservations = [];
+    $tabReservations = exec_request('SELECT R.id_restoCrous, id_personne, date_reserve, deuxieme_reserve, nom_resto
+        FROM RESERVE R
+        JOIN RESTO_CROUS RC ON (R.id_restoCrous = RC.id_restoCrous) 
+        WHERE id_personne = \''.$_SESSION['idPersonne'].'\'
+        ORDER BY date_reserve DESC'
+        );
+
+    $tabParam = array(
+        'listeReservations' => $tabReservations
+    );
+
+    view('accueil', $tabParam);
 
 
 ?>
