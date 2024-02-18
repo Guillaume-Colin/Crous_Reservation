@@ -16,10 +16,12 @@ require_once './inc/functions.php';
 require_once './inc/functions_db.php';
 require_once('./inc/config.php');
 
+session_start();
+
 $controle = "N";
-if(isset($_POST['controle']))
+if(isset($_POST['controleHoraire']))
 {
-    $controle = $_POST['controle'];
+    $controle = $_POST['controleHoraire'];
 } 
 
 if ($controle=="N")
@@ -33,8 +35,9 @@ if ($controle=="N")
     {
       redirect('./Accueil.php');
     }
+    $_SESSION['idResto'] = $idResto;
 
-    $resto = search_db('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE id_restoCrous = '.$idResto.'');
+    $resto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE id_restoCrous = '.$idResto.'');
 
     $tabParam = array(
       'idResto' => $idResto,
@@ -56,6 +59,12 @@ else
   if ($date != '' && $plageHoraire != 0 )
     {
       $submit='O';
+      $_SESSION['idResto'] = $_POST['idResto'];
+      $_SESSION['nomResto'] = $_POST['nomResto'];
+      $_SESSION['descResto'] = $_POST['descResto'];
+      $_SESSION['typeResto'] = $_POST['typeResto'];
+      $_SESSION['date'] = $date;
+      $_SESSION['plageHoraire'] = $plageHoraire;
     }
   $tabParam = array(
     'idResto' => $_POST['idResto'],
