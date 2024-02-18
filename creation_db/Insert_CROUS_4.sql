@@ -227,23 +227,23 @@ VALUES
     (15, 28),
     (15, 29);
 
-    INSERT INTO Reserve (id_restoCrous, id_personne, date_reserve, deuxieme_reserve, heure_debut_reserve)
+    INSERT INTO Reserve (id_restoCrous, id_personne, date_reserve, deuxieme_reserve, heure_debut_reserve, id_entree, id_plat, id_dessert)
     VALUES
-        (16, 'E223029G', '2023-12-01', true, '12:00:00'),
-        (16, 'E223029G', '2023-12-01', false, '11:00:00'),
-        (17, 'E224329B', '2023-12-05', false, '13:30:00'),
-        (18, 'E225142I', '2023-12-10', true, '12:00:00'),
-        (18, 'E225142I', '2023-12-10', false, '11:30:00'),
-        (19, 'E193045U', '2023-12-15', false, '12:30:00'),
-        (34, 'E204615J', '2023-12-20', true, '13:00:00'),
-        (34, 'E204615J', '2023-12-20', false, '12:00:00'),
-        (33, 'E225457X', '2023-12-25', false, '11:30:00'),
-        (32, 'E227821Y', '2023-12-30', true, '13:30:00'),
-        (32, 'E227821Y', '2023-12-30', false, '12:30:00'),
-        (31, 'E183029C', '2023-01-04', false, '12:30:00'),
-        (30, 'E223045D', '2023-01-09', true, '12:00:00'),
-        (30, 'E223045D', '2023-01-09', false, '13:00:00'),
-        (29, 'E214029G', '2023-01-14', false, '13:30:00');
+    (16, 'E223029G', '2023-12-01', true, '12:00:00', NULL, NULL, NULL),
+    (16, 'E223029G', '2023-12-01', false, '11:00:00', NULL, NULL, NULL),
+    (17, 'E224329B', '2023-12-05', false, '13:30:00', NULL, NULL, NULL),
+    (18, 'E225142I', '2023-12-10', true, '12:00:00', NULL, NULL, NULL),
+    (18, 'E225142I', '2023-12-10', false, '11:30:00', NULL, NULL, NULL),
+    (19, 'E193045U', '2023-12-15', false, '12:30:00', NULL, NULL, NULL),
+    (34, 'E204615J', '2023-12-20', true, '13:00:00', NULL, NULL, NULL),
+    (34, 'E204615J', '2023-12-20', false, '12:00:00', NULL, NULL, NULL),
+    (33, 'E225457X', '2023-12-25', false, '11:30:00', NULL, NULL, NULL),
+    (32, 'E227821Y', '2023-12-30', true, '13:30:00', NULL, NULL, NULL),
+    (32, 'E227821Y', '2023-12-30', false, '12:30:00', NULL, NULL, NULL),
+    (31, 'E183029C', '2023-01-04', false, '12:30:00', NULL, NULL, NULL),
+    (30, 'E223045D', '2023-01-09', true, '12:00:00', NULL, NULL, NULL),
+    (30, 'E223045D', '2023-01-09', false, '13:00:00', NULL, NULL, NULL),
+    (29, 'E214029G', '2023-01-14', false, '13:30:00', NULL, NULL, NULL);
 
 -- Ajout des membres du personnel dans travaille
 INSERT INTO travaille (id_personne, id_restoCrous)

@@ -57,6 +57,9 @@ CREATE TABLE reserve (
     date_reserve DATE,
     deuxieme_reserve Boolean,
     heure_debut_reserve TIME,
+    id_entree INT,
+    id_plat INT,
+    id_dessert INT,
     FOREIGN KEY (id_restoCrous) REFERENCES Resto_Crous(Id_restoCrous),
     FOREIGN KEY (id_personne) REFERENCES Personne(id_personne),
     PRIMARY KEY (id_restoCrous, id_personne, date_reserve, deuxieme_reserve)
