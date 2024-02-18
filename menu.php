@@ -18,18 +18,15 @@
     $idDessert = null;
     
     $controle = "N";
-    if(isset($_POST['controleMenu']))
-    {
+    if(isset($_POST['controleMenu'])) {
         $controle = $_POST['controleMenu'];
     } 
     
-    if ($controle=="O")
-    {
+    if ($controle=="O") {
         $idEntree = $_POST['entree'];
         $idPlat = $_POST['plat'];
         $idDessert = $_POST['dessert'];
-        if ($idEntree!='' || $idPlat!='' || $idDessert!='')
-        {        
+        if ($idEntree!='' || $idPlat!='' || $idDessert!='') {        
             $resultat = exec_request('INSERT INTO RESERVE 
                 VALUES('.$_SESSION['idResto'].', 
                        \''.$_SESSION['login'].'\', 
@@ -55,6 +52,7 @@
         'idPlat' => $idPlat,
         'idDessert' => $idDessert
     );
-    view('menu',$tabParam);?>
+    view('menu', $tabParam);
+    ?>
 </body>
 </html>
