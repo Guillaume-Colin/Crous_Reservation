@@ -14,7 +14,7 @@ function connect_db()
 
 
 
-function search_db($requete)
+function exec_request($requete)
 {
     // étape 1
     $db = connect_db();
@@ -23,6 +23,7 @@ function search_db($requete)
     }
     try {
         $smt = $db->prepare($requete);
+        var_dump($requete);
         $smt->execute();
         $result = $smt->fetchAll(PDO::FETCH_OBJ);   
         return $result;
@@ -35,4 +36,4 @@ function search_db($requete)
     }
 }
 
-// search_db('SELECT * FROM article');
+// exec_request('SELECT * FROM article');
