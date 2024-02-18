@@ -19,7 +19,7 @@ if(isset($_POST['valid_connection'])){
         $fields = [
             'user_name' => $username
         ];
-        search_db($sql);
+        exec_request($sql);
     }
 }
 
