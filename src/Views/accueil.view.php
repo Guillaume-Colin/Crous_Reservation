@@ -46,6 +46,10 @@
     float: right;
     margin-top: 5px; 
     margin-left: 10px;
+    height: 30px;
+    width: 60px;
+    background-color: #FF9955;
+    border-radius: 5px;
   }
 
   #sousRectangle {
@@ -57,14 +61,16 @@
     overflow: hidden;
     border-radius: 10px;
     height: 50px; 
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments enfants */
   }
 
   #sousTitre {
-    float: left;
     font-size: 18px;
     padding-left: 10px;
     margin-top: 0px; 
     margin-bottom: 5px;
+    flex-grow: 1; /* Pour pousser le bouton supprimer à droite */
   }
 
   #date {
@@ -75,7 +81,6 @@
   }
 
   .boutonCarre {
-    float: right;
     width: 30px;
     height: 30px;
     border: 2px solid #000;
@@ -87,17 +92,13 @@
     border-radius: 5px;
   }
 
-  /* .modifier-image {
-    background-image: url("../../public/img/modifier.png"); 
-  } */
-
   .supprimer-image {
-    background-image: url("./public/img/supprimer.png"); /* Chemin vers l'image */
+    background-image: url("./public/img/supprimer.png");
   }
 
   #sousRectangle:hover {
     background-color: #FF9955;
-    }
+  }
 
 </style>
 <?php include_once("./src/Views/navbar.view.php"); ?>
@@ -106,15 +107,13 @@
   <h1 id="titrePrincipal">Bienvenue sur votre espace CROUS Réservation</h1>
   <div id="grandRectangle">
     <h2 id="titre">Mes réservations :</h2>
-    <a href="./Search.php"><button id="bouton"></button></a>
+    <a href="./Search.php"><button id="bouton"><b>Ajouter</b></button></a>
         
     
     <?php
         foreach ($param["listeReservations"] as $item) {
             echo '<div id="sousRectangle">';
-            echo '<h3>'.$item->nom_resto.' : '.$item->date_reserve.'</h3>';
-            // echo '<span id="date">'.$item->date_reserve.'</span>';
-            // echo '<button class="boutonCarre modifier-image"></button>';
+            echo '<h3 id="sousTitre">'.$item->nom_resto.' : '.$item->date_reserve.'</h3>';
             echo '<a href="./Accueil.php?idToDelete='.$item->id_restoCrous.'|'.$item->date_reserve.'"><button class="boutonCarre supprimer-image"></button></a>';
             echo '</div>';
         }
