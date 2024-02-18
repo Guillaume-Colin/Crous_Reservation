@@ -20,6 +20,7 @@
     text-align: center; 
     font-size: 28px;
     margin-bottom: 20px; 
+    margin-top: 100px;
   }
 
   #grandRectangle {
@@ -55,15 +56,15 @@
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 10px;
-    height: 100px; 
+    height: 50px; 
   }
 
   #sousTitre {
     float: left;
     font-size: 18px;
     padding-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px; 
+    margin-top: 0px; 
+    margin-bottom: 5px;
   }
 
   #date {
@@ -79,7 +80,6 @@
     height: 30px;
     border: 2px solid #000;
     margin-left: 10px; 
-    margin-top: 5px; 
     cursor: pointer;
     background-size: 70%; 
     background-repeat: no-repeat;
@@ -96,6 +96,7 @@
   }
 
 </style>
+<?php include_once("./src/Views/navbar.view.php"); ?>
 </head>
 <body>
   <h1 id="titrePrincipal">Bienvenue sur votre espace CROUS Réservation</h1>

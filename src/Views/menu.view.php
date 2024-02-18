@@ -17,7 +17,7 @@
 .container {
     width: 50%;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 100px;
 }
 
 .header {
@@ -103,6 +103,7 @@ select {
 </style>
 
 </head>
+<?php include_once("./src/Views/navbar.view.php"); ?>
 <body>
   <form method="POST">
   <input type="hidden" name="controleMenu" value="O"/>
