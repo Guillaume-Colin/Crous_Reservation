@@ -1,5 +1,3 @@
-//HERITAGE RESTO CROUS//
-
 <?php
 
 /**
@@ -8,14 +6,11 @@
 class Cafet extends Resto_Crous 
 
 {
-    private ;
-    private ;
+    private $Id_restocrous;
 
-
-    public function __construct($Id_restocrous, $nb_place)
+    public function __construct($Id_restocrous)
     {
         $this->Id_restocrous = $Id_restocrous;
-        $this->nb_place = $nb_place;
         parent::__construct();
     }
 

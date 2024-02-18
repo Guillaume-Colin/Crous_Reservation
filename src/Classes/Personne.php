@@ -111,7 +111,7 @@ class Personne
     }
 
     /**
- faire une seule classe avec porteur de carte + Personnel dans Personne , avec role que le prof à montré
+ faire une seule classe avec porteur de carte + Personnel dans Personne , avec role que le prof à montrer
      */
 
 

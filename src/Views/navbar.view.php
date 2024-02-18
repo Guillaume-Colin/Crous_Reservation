@@ -72,9 +72,8 @@
             </a>
         </div>
         <div class="right-content">
-            <span>vfvvvfv</span> 
-            <span>vfvvvfv</span> 
-            <a href="index.php"> 
+            <span><?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?></span> 
+            <a href="./index.php?Logout=O"> 
                 <img src="./public/img/logout.png">
             </a>
         </div>

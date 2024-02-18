@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./public/css/styles.css">
 </head>
 <body>
+    <form method="POST">
     <div class="login-container">
         <img src="./public/img/logo_crous.png" alt="Votre Logo" class="logo">
         <h1 class="titre">Bienvenue</h1>
@@ -28,6 +29,7 @@
             </form>
         </div>
     </div>
+    </form>
 </body>
 </html>
 
