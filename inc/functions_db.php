@@ -23,7 +23,6 @@ function exec_request($requete)
     }
     try {
         $smt = $db->prepare($requete);
-        var_dump($requete);
         $smt->execute();
         $result = $smt->fetchAll(PDO::FETCH_OBJ);   
         return $result;
