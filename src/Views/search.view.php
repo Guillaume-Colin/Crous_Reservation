@@ -18,7 +18,8 @@
             font-family: "Alata", sans-serif;
             overflow-y: auto;
         }
-         .container {
+        
+        .container {
             /*text-align: center;*/
             margin-top: 50px;
         } 
@@ -66,8 +67,7 @@
             margin: 5px 0;
         }
 
-        .text
-        {
+        .text {
             padding-left: 20px;
         }
         
@@ -79,26 +79,26 @@
     <div class="container">
         <div class="search-bar">
             <form method="POST">
-            <input type="text" placeholder="Entrer le nom d'un restaurant" class="search-input" name="nomResto" value="<?php echo $param["nomResto"] ?>">
-            <button class="search-button" type="submit">Recherche</button>
-    </form>
+                <input type="text" placeholder="Entrer le nom d'un restaurant" class="search-input" name="nomResto" value="<?php echo $param["nomResto"] ?>">
+                <button class="search-button" type="submit">Recherche</button>
+            </form>
         </div>
 
         <form method="POST">
             <?php
-        foreach ($param["listeRestos"] as $item) {
-            echo '<div class="result-box">';
-            echo '<div class="text">';
-            echo '<h1>'.$item->nom_resto.'</h1>';
-            echo '<h2>'.$item->type.'</h2>';
-            echo '<p>'.$item->description_resto.'</p>';
-            echo '</div>';
-            echo '<button class="reserve-button" type="submit" formaction="./horaire.php?idResto='.$item->id_restoCrous.'">Réserver</button>';
-            echo '</div>';
-            echo '<br/>';
-            echo '<br/>';
-            }
-        ?>
+                foreach ($param["listeRestos"] as $item) {
+                    echo '<div class="result-box">';
+                    echo '<div class="text">';
+                    echo '<h1>'.$item->nom_resto.'</h1>';
+                    echo '<h2>'.$item->type.'</h2>';
+                    echo '<p>'.$item->description_resto.'</p>';
+                    echo '</div>';
+                    echo '<button class="reserve-button" type="submit" formaction="./horaire.php?idResto='.$item->id_restoCrous.'">Réserver</button>';
+                    echo '</div>';
+                    echo '<br/>';
+                    echo '<br/>';
+                }
+            ?>
         </form>
 
     </div>

@@ -26,7 +26,7 @@
             width: 100%;
             position: fixed;
             top: 0;
-            z-index: 1000; 
+            z-index: 1000;
         }
 
         .logo img {
@@ -40,9 +40,9 @@
         }
 
         .right-content span {
-            margin-right: 10px; 
+            margin-right: 10px;
             font-size: 18px;
-            font-weight: bold; 
+            font-weight: bold;
             color: black;
         }
 
@@ -51,17 +51,15 @@
             cursor: pointer;
             padding-right: 30px;
             transition: transform 0.3s;
-            padding-left: 30px; 
+            padding-left: 30px;
         }
 
         .right-content img:hover{
-            transform: scale(1.2); 
+            transform: scale(1.2);
         }
         .logo img:hover{
-            transform: scale(1.2); 
+            transform: scale(1.2);
         }
-
- 
     </style>
 </head>
 <body>
@@ -72,8 +70,8 @@
             </a>
         </div>
         <div class="right-content">
-            <span><?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?></span> 
-            <a href="./index.php?Logout=O"> 
+            <span><?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?></span>
+            <a href="./index.php?Logout=O">
                 <img src="./public/img/logout.png">
             </a>
         </div>

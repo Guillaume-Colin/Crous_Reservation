@@ -120,12 +120,6 @@ select:hover {
             <div class="section-title">
                 <h3>Entrées :</h3>
             </div>
-            <!-- <div class="buttons">
-                <button class="button">Végétarien</button>
-                <button class="button">Button 2</button>
-                <button class="button">Button 3</button>
-                <button class="button">Button 4</button>
-            </div> -->
             <select name="entree">
               <option value="NULL" label="Sélectionner une entrée"/>
               <?php
@@ -140,12 +134,6 @@ select:hover {
                 <div class="section-title">
                     <h3>Plats :</h3>
                 </div>
-                <!-- <div class="buttons">
-                <button class="button">Button 1</button>
-                <button class="button">Button 2</button>
-                <button class="button">Button 3</button>
-                <button class="button">Button 4</button>
-            </div> -->
             <select name="plat">
             <option value="NULL" label="Sélectionner un plat"/>
              <?php
@@ -161,12 +149,6 @@ select:hover {
                 <div class="section-title">
                     <h3>Desserts :</h3>
                 </div>
-                <!-- <div class="buttons">
-                <button class="button">Button 1</button>
-                <button class="button">Button 2</button>
-                <button class="button">Button 3</button>
-                <button class="button">Button 4</button>
-            </div> -->
             <select name="dessert">
             <option value="NULL" label="Sélectionner un dessert"/>
              <?php

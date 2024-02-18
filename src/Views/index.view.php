@@ -11,25 +11,24 @@
 </head>
 <body>
     <form method="POST">
-    <div class="login-container">
-        <img src="./public/img/logo_crous.png" alt="Votre Logo" class="logo">
-        <h1 class="titre">Bienvenue</h1>
-        <div class="login-form">
-            <h2>Connexion</h2>
-            <form action="#" method="POST">
-                <div class="input-group">
-                    <label for="username">Nom d'utilisateur:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Mot de passe:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit">Se connecter</button>
-            </form>
+        <div class="login-container">
+            <img src="./public/img/logo_crous.png" alt="Votre Logo" class="logo">
+            <h1 class="titre">Bienvenue</h1>
+            <div class="login-form">
+                <h2>Connexion</h2>
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <label for="username">Nom d'utilisateur:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Mot de passe:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
         </div>
-    </div>
     </form>
 </body>
 </html>
-
