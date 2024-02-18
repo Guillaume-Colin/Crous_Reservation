@@ -95,6 +95,10 @@
     background-image: url("./public/img/supprimer.png"); /* Chemin vers l'image */
   }
 
+  #sousRectangle:hover {
+    background-color: #FF9955;
+    }
+
 </style>
 <?php include_once("./src/Views/navbar.view.php"); ?>
 </head>

@@ -79,6 +79,10 @@ select {
     border-radius: 5px;
 }
 
+select:hover {
+    background-color: #FF9955; /* Changer la couleur de fond au survol */
+}
+
 .section {
     margin-top: 20px;
 }
@@ -98,6 +102,7 @@ select {
     text-align: center;
     margin-top: 20px;
 }
+
 
 
 </style>
