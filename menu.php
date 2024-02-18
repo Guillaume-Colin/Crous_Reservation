@@ -10,8 +10,8 @@
     require_once './inc/functions_db.php';
     require_once './inc/functions.php';
     require_once('./inc/config.php');
-
-    session_start();
+    init_php_session();
+    ensure_user_is_authentificated();
 
     $idEntree = null;
     $idPlat = null;
@@ -32,7 +32,7 @@
         {        
             $resultat = exec_request('INSERT INTO RESERVE 
                 VALUES('.$_SESSION['idResto'].', 
-                       \''.$_SESSION['idPersonne'].'\', 
+                       \''.$_SESSION['login'].'\', 
                        \''.$_SESSION['date'].'\', 
                         0, 
                         \''.$_SESSION['plageHoraire'].'\', 

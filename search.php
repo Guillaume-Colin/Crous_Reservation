@@ -1,10 +1,9 @@
 <?php
-    require_once './inc/functions_db.php';
-    require_once './inc/functions.php';
+require_once './inc/functions_db.php';
+require_once './inc/functions.php';
 require_once('./inc/config.php');
-
-session_start();
-$_SESSION['idPersonne']='E223029G';
+init_php_session();
+ensure_user_is_authentificated();
 
     $listeResto = [];
     $nomResto = NULL;
@@ -15,7 +14,7 @@ $_SESSION['idPersonne']='E223029G';
     if(isset($_POST['nomResto']))
     {
         $nomResto = $_POST['nomResto'];
-            $listeResto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE nom_resto like \'%'.$nomResto.'%\'');
+        $listeResto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE nom_resto like \'%'.$nomResto.'%\'');
     } 
     
     $tabParam = array(

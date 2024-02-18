@@ -11,12 +11,11 @@
 </head>
 <body>
 <?php
-
 require_once './inc/functions.php';
 require_once './inc/functions_db.php';
 require_once('./inc/config.php');
-
-session_start();
+init_php_session();
+ensure_user_is_authentificated();
 
 $controle = "N";
 if(isset($_POST['controleHoraire']))

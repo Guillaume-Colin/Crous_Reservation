@@ -1,27 +1,61 @@
 <?php
-/*function view($name)
-{
-    include("./src/Views/$name.view.php");
-}*/
-
 require_once('./inc/functions.php');
 require_once('./inc/config.php');
 require_once('./inc/functions_db.php');
 init_php_session();
 
-if(isset($_POST['valid_connection'])){
-    if(isset($_POST['username']) && !empty($_POST['username']) && 
-    isset($_POST['password']) && !empty($_POST['password'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+if(isset($_GET['Logout']) && $_GET['Logout']=='O') 
+{
+    session_destroy();
+    redirect('./Index.php');
+}
+else
+{
+    if (is_user_authentificated())
+    {
+        redirect('./Accueil.php');
+    }
+}       
 
-        $sql = 'SELECT * FROM personne WHERE $username = :id_personne';
-        $fields = [
-            'user_name' => $username
-        ];
-        exec_request($sql);
+/*function view($name)
+{
+    include("./src/Views/$name.view.php");
+}*/
+
+
+// if(isset($_POST['valid_connection'])){
+//     if(isset($_POST['username']) && !empty($_POST['username']) && 
+//     isset($_POST['password']) && !empty($_POST['password'])){
+//         $username = $_POST['username'];
+//         $password = $_POST['password'];
+
+//         $sql = 'SELECT * FROM personne WHERE $username = :id_personne';
+//         $fields = [
+//             'user_name' => $username
+//         ];
+//         exec_request($sql);
+//     }
+// }
+
+if(isset($_POST['username']) && !empty($_POST['username']) && 
+isset($_POST['password']) && !empty($_POST['password'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = 'SELECT * FROM personne WHERE id_personne = \''.$username.'\' AND mdp = \''.$password.'\'';
+    // $fields = [
+    //     'user_name' => $username,
+    //     'password' => $password
+    // ];
+     $tabPersonnes = exec_request($sql);
+    if (count($tabPersonnes) > 0)
+    {
+        $_SESSION['login'] = $username;
+        redirect('./Accueil.php');
     }
 }
+
+
 
 view("index");
 
