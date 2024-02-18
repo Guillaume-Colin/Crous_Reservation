@@ -11,8 +11,68 @@
 </head>
 <body>
 <?php
-require 'accueil.php';
-view('horaire');
+
+require_once './inc/functions.php';
+require_once './inc/functions_db.php';
+require_once('./inc/config.php');
+
+$controle = "N";
+if(isset($_POST['controle']))
+{
+    $controle = $_POST['controle'];
+} 
+
+if ($controle=="N")
+{
+    $idResto = null;
+    if(isset($_GET['idResto']))
+    {
+        $idResto = $_GET['idResto'];
+    } 
+    if ($idResto == null)
+    {
+      redirect('./Accueil.php');
+    }
+
+    $resto = search_db('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE id_restoCrous = '.$idResto.'');
+
+    $tabParam = array(
+      'idResto' => $idResto,
+      'nomResto' => $resto[0]->nom_resto,
+      'descResto' => $resto[0]->description_resto,
+      'typeResto' => $resto[0]->type,
+      'date' => '',
+      // 'heure' => '',
+      'plageHoraire' => 0,
+      'submit' => 'N'
+    ); 
+}
+else
+{
+  $date = $_POST['date'];
+  // $heure = $_POST['heure'];
+  $plageHoraire = $_POST['plageHoraire'];
+  $submit='N';
+  if ($date != '' && $plageHoraire != 0 )
+    {
+      $submit='O';
+    }
+  $tabParam = array(
+    'idResto' => $_POST['idResto'],
+    'nomResto' => $_POST['nomResto'],
+    'descResto' => $_POST['descResto'],
+    'typeResto' => $_POST['typeResto'],
+    'date' => $_POST['date'],
+    // 'heure' => $_POST['heure'],
+    'plageHoraire' => $_POST['plageHoraire'],
+    'submit' => $submit
+  ); 
+}
+
+
+
+view('horaire',$tabParam);
+
 ?>
 </body>
 </html>
