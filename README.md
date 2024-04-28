@@ -28,3 +28,5 @@ Pour faire fonctionner l'application, veuillez suivre les étapes suivantes :
 - Pour vous connecter à l'application en tant qu'utilisateur de test, utilisez les informations suivantes :
   - Login : E223029G
   - Mot de passe : 123
+
+![Photo de présentation](public/img/presentation.png)
