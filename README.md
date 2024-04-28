@@ -29,4 +29,4 @@ Pour faire fonctionner l'application, veuillez suivre les étapes suivantes :
   - Login : E223029G
   - Mot de passe : 123
 
-![Photo de présentation](./public/img/presentation.png)
+![Photo de présentation](./public/img/Presentation.png)
