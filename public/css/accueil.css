@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    font-family: "Alata", sans-serif;
+    overflow-y: auto;
+}
+
+#titrePrincipal {
+    text-align: center; 
+    font-size: 28px;
+    margin-bottom: 20px; 
+    margin-top: 100px;
+}
+
+#grandRectangle {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    width: 60%;
+    height: 50%;
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#titre {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+#boutonStock {
+    float: right;
+    width: 45px;
+    height: 45px;
+    /* border: 2px solid #000; */
+    margin-left: 10px; 
+    background-image: url("../img/stocks.png");
+    background-size: 102%;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.bouton {
+    float: right;
+    width: 45px;
+    height: 45px;
+    /* border: 2px solid #000; */
+    margin-left: 10px; 
+    /* cursor: pointer; */
+    /* background-size: 70%;  */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.bouton-ajouter{
+    background-image: url("../img/ajouter.png");
+    background-repeat: no-repeat;     
+    background-size: 90%;
+    background-position: center;
+}
+.bouton-ajouter:hover{
+    background-color: #B00000;
+}
+
+#sousRectangle {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #000;
+    padding: 5px; 
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 50px; 
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments enfants */
+    transition: transform 0.3s, box-shadow 0.3s; /* Ajout d'une transition fluide */
+}
+
+
+
+#sousTitre {
+    font-size: 18px;
+    padding-left: 10px;
+    margin-top: 0px; 
+    margin-bottom: 5px;
+    flex-grow: 1; /* Pour pousser le bouton supprimer à droite */
+}
+
+#date {
+    float: left;
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 5px; 
+}
+
+.boutonCarre {
+    width: 30px;
+    height: 30px;
+    /* border: 2px solid #000; */
+    margin-left: 10px; 
+    /* cursor: pointer; */
+    background-size: 70%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.supprimer-image {
+    background-image: url("../img/supprimer.png");
+}
+#boutonStock:hover{
+    background-color: #B00000;
+}
+
+#boutonStock:hover,
+.bouton-ajouter:hover, .boutonSupprimer:hover, #sousRectangle:hover, #grandRectangle:hover {
+    transform: translate(0, -5px); /* Effet de translation vers le haut */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Effet d'ombre */
+}
+
+#grandRectangle:hover {
+    transform: translate(0, -5px); /* Effet de translation vers le haut */
+    box-shadow: 0px 5px 15px rgba(176, 0, 0, 1); /* Effet d'ombre */
+}
+
+
+#sousRectangle:hover {
+    background-color: #FF9955;
+}
+
+.reservation-message {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #B00000;
+color: white;
+padding: 20px;
+border-radius: 10px;
+z-index: 9999;
+display: none;
+}
+
+.visible {
+display: block;
+}
+
+.circle-container {
+position: relative;
+width: 100px;
+height: 100px;
+margin: 0 auto;
+}
+
+.circle {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 80px;
+height: 80px;
+border-radius: 50%;
+border: 2px solid white;
+animation: circle-animation 1s ease-in-out forwards;
+}
+
+.tick {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 50px; /* Ajustez la taille du tick selon vos besoins */
+height: 50px; /* Ajustez la taille du tick selon vos besoins */
+fill: none;
+stroke: white;
+stroke-width: 5;
+stroke-linecap: round;
+stroke-linejoin: round;
+opacity: 0;
+animation: tick-animation 1s ease-in-out forwards;
+}
+
+@keyframes circle-animation {
+0% {
+width: 0;
+height: 0;
+opacity: 0;
+}
+100% {
+width: 80px;
+height: 80px;
+opacity: 1;
+}
+}
+
+@keyframes tick-animation {
+0% {
+transform: translate(-50%, -50%) scale(0); /* Taille initiale du tick */
+opacity: 0;
+}
+50% {
+opacity: 1;
+}
+100% {
+transform: translate(-50%, -50%) scale(1); /* Taille finale du tick */
+opacity: 1;
+}
+}
+
+
+.reservation-message-close {
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    font-size: 50px;
+    cursor: pointer;
+
+}

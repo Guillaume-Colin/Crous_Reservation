@@ -22,7 +22,7 @@
         $controle = $_POST['controleHoraire'];
     } 
 
-    if ($controle == "N") {
+    if ($controle == "N") {// Dans le cas ou on arrive la première fois
         $idResto = null;
         if(isset($_GET['idResto'])) {
             $idResto = $_GET['idResto'];
@@ -30,10 +30,14 @@
         if ($idResto == null) {
             redirect('./Accueil.php');
         }
-        $_SESSION['idResto'] = $idResto;
+        $_SESSION['idResto'] = $idResto;// Stocke idResto dans la session
 
-        $resto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE id_restoCrous = '.$idResto.'');
+        // Dans le cas ou idResto est pas null
+        $resto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto 
+                                FROM resto_crous 
+                                WHERE id_restoCrous = '.$idResto.'');
 
+        // Données pour la vue la première fois
         $tabParam = array(
             'idResto' => $idResto,
             'nomResto' => $resto[0]->nom_resto,
@@ -43,7 +47,7 @@
             'plageHoraire' => 0,
             'submit' => 'N'
         ); 
-    } else {
+    } else { //mode controle -> controle = oui , controle pour passer à la page suivante
         $date = $_POST['date'];
         $plageHoraire = $_POST['plageHoraire'];
         $submit = 'N';
@@ -56,6 +60,7 @@
             $_SESSION['date'] = $date;
             $_SESSION['plageHoraire'] = $plageHoraire;
         }
+        // Données pour la vue à la fin
         $tabParam = array(
             'idResto' => $_POST['idResto'],
             'nomResto' => $_POST['nomResto'],

@@ -8,71 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <title>Recherche</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            /* align-items: center; */
-            /* height: 100vh; */
-            margin: 0;
-            font-family: "Alata", sans-serif;
-            overflow-y: auto;
-        }
-        
-        .container {
-            /*text-align: center;*/
-            margin-top: 50px;
-        } 
-
-        .search-bar {
-            margin-bottom: 10px; /* Diminution de la marge pour réduire la hauteur */
-            margin-top: 50px;
-        }
-
-        .search-input {
-            padding: 15px;
-            width: 454px;
-            font-family: "Alata", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        .search-button, .reserve-button {
-            background-color: #B00000;
-            color: white;
-            border-radius: 5px;
-            margin: 5px;
-            cursor: pointer;
-            padding: 20px 30px; /* Augmentation de la hauteur du bouton */
-            border: none;
-        }
-
-        .result-box {
-            border: 1px solid black; /* Contours en noir */
-            padding: 10px; /* Réduction de la hauteur */
-            width: 600px;
-            display: inline-block;
-            text-align: left;
-            border-radius: 10px;
-            position: relative; /* Ajout de la position relative */
-        }
-
-        .reserve-button {
-            position: absolute; /* Ajout de la position absolue */
-            top: 50px; /* Ajustement de la position verticale */
-            right: 20px; /* Alignement à droite */
-        }
-
-        .result-box h1, .result-box h2, .result-box p {
-            margin: 5px 0;
-        }
-
-        .text {
-            padding-left: 20px;
-        }
-        
-    </style>
-
+    <link rel="stylesheet" href="./public/css/search.css">
 </head>
 <?php include_once("./src/Views/navbar.view.php"); ?>
 <body>

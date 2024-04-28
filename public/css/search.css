@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* height: 100vh; */
+    margin: 0;
+    font-family: "Alata", sans-serif;
+    overflow-y: auto;
+}
+
+.container {
+    /*text-align: center;*/
+    margin-top: 50px;
+} 
+
+.search-bar {
+    margin-bottom: 10px; /* Diminution de la marge pour réduire la hauteur */
+    margin-top: 50px;
+}
+
+.search-input {
+    padding: 15px;
+    width: 454px;
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 5px;
+}
+
+
+
+.result-box:hover {
+    transform: translate(0, -5px); 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+
+.result-box {
+    border: 1px solid black; /* Contours en noir */
+    padding: 10px; /* Réduction de la hauteur */
+    width: 600px;
+    display: inline-block;
+    text-align: left;
+    border-radius: 10px;
+    position: relative; /* Ajout de la position relative */
+}
+
+
+.result-box h1, .result-box h2, .result-box p {
+    margin: 5px 0;
+}
+
+.text {
+    padding-left: 20px;
+}
+
+
+.search-input:hover, .search-button:hover  {
+    transform: translate(0, -5px); /* Effet de translation vers le haut */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Effet d'ombre */
+}
+
+
+.result-box {
+
+    position: relative; 
+    overflow: hidden; 
+}
+
+.result-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, rgba(176, 0, 0, 0.2), transparent);
+    transition: width 0.5s; 
+}
+
+.result-box:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+
+.search-button            {
+    background-color: #B00000;
+    color: white;
+    border-radius: 5px;
+    margin: 4px;
+    cursor: pointer;
+    padding: 18px 30px; 
+    border: none;
+}
+
+
+/* .reserve-button {
+    position: absolute;
+    top: 50px; 
+    right: 20px;
+    z-index: 1;
+} */
+
+
+
+
+
+.reserve-button {
+    position: absolute; /* Utilisez position: relative au lieu de position: absolute */
+    background-color: white;
+    color: #B00000;
+    border: 2px solid #B00000;
+    border-radius: 5px;
+    padding: 15px 25px;
+    /* cursor: pointer; */
+    top: 50px; 
+    right: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.reserve-button::before,
+.reserve-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #B00000;
+    transition: width 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.reserve-button::after {
+    left: auto;
+    right: 0;
+}
+
+.reserve-button:hover::before {
+    width: 100%;
+}
+
+.reserve-button:hover::after {
+    width: 100%;
+}
+
+.reserve-button:hover {
+    background-color: #B00000;
+    color: white;
+    transform: translate(0, -5px); /* Effet de translation vers le haut */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Effet d'ombre */        
+}
+
+
+
+
+
+
+
+
+
+
