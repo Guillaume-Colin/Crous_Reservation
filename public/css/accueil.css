@@ -1,3 +1,17 @@
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    /* Autres variables CSS */
+}
+
+/* Styles pour le mode nuit */
+html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    /* Autres variables CSS */
+}
+
+
 body {
     margin: 0;
     padding: 0;

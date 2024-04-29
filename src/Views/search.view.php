@@ -22,17 +22,21 @@
 
         <form method="POST">
             <?php
-                foreach ($param["listeRestos"] as $item) {
-                    echo '<div class="result-box">';
-                    echo '<div class="text">';
-                    echo '<h1>'.$item->nom_resto.'</h1>';
-                    echo '<h2>'.$item->type.'</h2>';
-                    echo '<p>'.$item->description_resto.'</p>';
-                    echo '</div>';
-                    echo '<button class="reserve-button" type="submit" formaction="./horaire.php?idResto='.$item->id_restoCrous.'">Réserver</button>';
-                    echo '</div>';
-                    echo '<br/>';
-                    echo '<br/>';
+                if(empty($param["listeRestos"])) {
+                    echo '<center><p>Aucun établissement trouvé</p></center>';
+                } else {
+                    foreach ($param["listeRestos"] as $item) {
+                        echo '<div class="result-box">';
+                        echo '<div class="text">';
+                        echo '<h1>'.$item->nom_resto.'</h1>';
+                        echo '<h2>'.$item->type.'</h2>';
+                        echo '<p>'.$item->description_resto.'</p>';
+                        echo '</div>';
+                        echo '<button class="reserve-button" type="submit" formaction="./horaire.php?idResto='.$item->id_restoCrous.'">Réserver</button>';
+                        echo '</div>';
+                        echo '<br/>';
+                        echo '<br/>';
+                    }
                 }
             ?>
         </form>

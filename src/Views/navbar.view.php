@@ -18,11 +18,25 @@
         </div>
         <div class="right-content">
             <span data-content="<?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?>"><?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?></span>
+            <button class="toggle">Dark mode</button>
             <a href="./index.php?Logout=O">
                 <img src="./public/img/logout.png">
             </a>
         </div>
     </nav>
+<script>
+    const toggle = document.querySelector('.toggle')
+    toggle.addEventListener('click', (e) => {
+    const html = document.querySelector('html')
+    if (html.classList.contains('dark')) {
+        html.classList.remove('dark')
+        e.target.innerHTML = 'Dark mode'
+    } else {
+        html.classList.add('dark')
+        e.target.innerHTML = 'Light mode'
+    }
+})
+</script>
 
 </body>
 </html>

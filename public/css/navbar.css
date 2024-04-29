@@ -1,13 +1,29 @@
-body {
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+  }
+  
+  html {
+    transition: all 0.5s ease-in;
+  }
+  
+  html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    background-color: #111;
+    color: var(--primary-color);
+  }
+  
+  body {
     margin: 0;
     font-family: "Alata", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
-
-nav {
-    background-color: #fff;
-    color: #fff;
+  }
+  
+  nav {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,47 +33,45 @@ nav {
     position: fixed;
     top: 0;
     z-index: 1000;
-}
-
-.logo img {
+  }
+  
+  .logo img {
     width: 50px;
     padding-left: 50px;
-}
-
-.right-content {
+  }
+  
+  .right-content {
     display: flex;
     align-items: center;
-}
-
-.right-content span {
+  }
+  
+  .right-content span {
     margin-right: 10px;
     font-size: 18px;
     font-weight: bold;
-    color: black;
-}
-
-.right-content img {
+  }
+  
+  .right-content img {
     width: 30px;
     cursor: pointer;
     padding-right: 30px;
     transition: transform 0.3s;
     padding-left: 30px;
-}
-
-.right-content img:hover{
+  }
+  
+  .right-content img:hover{
     transform: scale(1.2);
-}
-.logo img:hover{
+  }
+  .logo img:hover{
     transform: scale(1.2);
-}
-
-
-span {
+  }
+  
+  span {
     position: relative;
     display: inline-block;
-}
-
-span:hover::before {
+  }
+  
+  span:hover::before {
     content: attr(data-content);
     position: absolute;
     top: 0;
@@ -65,22 +79,30 @@ span:hover::before {
     overflow: hidden;
     white-space: nowrap;
     animation: reveal 1s forwards;
-}
-
-@keyframes reveal {
+  }
+  
+  @keyframes reveal {
     from {
-        width: 0;
+      width: 0;
     }
     to {
-        width: 100%;
-        color: #FF9955;
+      width: 100%;
+      color: #FF9955;
     }
-}
-
-
-
-
-
-
-
-
+  }
+  
+  .toggle {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    /* position: absolute; */
+    top: 100px;
+  }
+  
+  .toggle:focus {
+    outline: none;
+  }
+  
