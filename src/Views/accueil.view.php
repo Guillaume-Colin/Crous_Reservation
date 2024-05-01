@@ -1,4 +1,3 @@
-<!-- @language=JavaScript -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
