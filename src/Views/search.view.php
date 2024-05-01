@@ -22,9 +22,10 @@
 
         <form method="POST">
             <?php
-                if(empty($param["listeRestos"])) {
+                // Vérifie si la recherche a été effectuée et s'il n'y a pas de résultats
+                if(isset($_POST["nomResto"]) && empty($param["listeRestos"])) {
                     echo '<center><p>Aucun établissement trouvé</p></center>';
-                } else {
+                } elseif (!empty($param["listeRestos"])) { // Affiche les résultats s'il y en a
                     foreach ($param["listeRestos"] as $item) {
                         echo '<div class="result-box">';
                         echo '<div class="text">';
