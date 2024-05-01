@@ -4,77 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestion du Stock</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 50px;
-      font-family: "Alata", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .container {
-      width: 90%;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .zone {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 15px;
-    }
-
-    .zone select {
-      width: calc(33.33% + 150px); /* Largeur des listes déroulantes augmentée davantage */
-      padding: 15px; /* Ajustement de la taille des options */
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #fff;
-      color: #333;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      margin-right: 20px;
-    }
-
-    .zone .btn-left,
-    .zone .btn-right {
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      background-color: #B00000;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .zone input[type="text"] {
-      flex: 0.1;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-      box-sizing: border-box;
-      background-color: #f9f9f9;
-      margin: 0 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="../public/css/stock.css">
 </head>
-<?php include_once("./src/Views/navbar.view.php"); ?>
+<?php include_once("navbar.view.php"); ?>
 <body>
 <form method="POST" action="stock.php">
   <div class="container">

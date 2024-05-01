@@ -1,4 +1,6 @@
 <?php
+require_once "functions_db.php";
+
 
 function is_post()
 {
@@ -43,7 +45,7 @@ function ensure_user_is_authentificated()
 
 function view($name,$param = null)
 {
-        include("./src/Views/$name.view.php");
+        include("../src/Views/$name.view.php");
 }
 
 

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./public/css/horaire.css">
+    <link rel="stylesheet" href="../public/css/horaire.css">
 </head>
 
 <script>
@@ -15,7 +15,7 @@
         document.getElementById('Form').submit();
     }
 </script>
-<?php include_once("./src/Views/navbar.view.php"); ?>
+<?php include_once("navbar.view.php"); ?>
 
 <body
 <?php 
@@ -60,7 +60,7 @@
             </div>
 
             <div class="button-container">
-                <button class="annuler-button" type="button" onclick="window.location.href='./search.php'">Annuler</button>
+                <button class="annuler-button" type="button" onclick="window.location.href='./src/search.php'">Annuler</button>
                 <button class="reserve-button" type="submit">Reserver</button>
             </div>
         </form>

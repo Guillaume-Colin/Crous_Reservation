@@ -9,7 +9,7 @@ if(isset($_GET['Logout']) && $_GET['Logout']=='O') {
     redirect('./Index.php');
 } else {
     if (is_user_authentificated()) {
-        redirect('./Accueil.php');
+        redirect('./src/Accueil.php');
     }
 }
 
@@ -25,7 +25,7 @@ isset($_POST['password']) && !empty($_POST['password'])) {
     $tabPersonnes = exec_request($sql);
     if (count($tabPersonnes) > 0) {
         $_SESSION['login'] = $username;
-        redirect('./Accueil.php');
+        redirect('./src/Accueil.php');
     }
 }
 

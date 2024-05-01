@@ -7,9 +7,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 <title>Choix Menu</title>
-<link rel="stylesheet" href="./public/css/menu.css">
+<link rel="stylesheet" href="../public/css/menu.css">
 </head>
-<?php include_once("./src/Views/navbar.view.php"); ?>
+<?php include_once("navbar.view.php"); ?>
 <body>
   <form method="POST">
   <input type="hidden" name="controleMenu" value="O"/>
@@ -62,7 +62,7 @@
             </select>
             </div>
             <div class="footer">
-                <button class="cancel-button" type="button" onclick="window.location.href='./horaire.php'">Annuler</button>
+                <button class="cancel-button" type="button" onclick="window.location.href='./src/horaire.php'">Annuler</button>
                 <button class="validate-button" type="submit" onclick="afficherMessageBox()">Réserver</button>
             </div>
         </div>

@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <title>Recherche</title>
-    <link rel="stylesheet" href="./public/css/search.css">
+    <link rel="stylesheet" href="../public/css/search.css">
 </head>
-<?php include_once("./src/Views/navbar.view.php"); ?>
+<?php include_once("navbar.view.php"); ?>
 <body>
     <div class="container">
         <div class="search-bar">
