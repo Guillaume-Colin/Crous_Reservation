@@ -1,6 +1,6 @@
 # Crous_Reservation
 
-Projet d'application pour la réservation de repas pour les étudiants du Crous.
+Application de réservation des repas pour les étudiants du Crous.
 
 ## Instructions d'installation
 
