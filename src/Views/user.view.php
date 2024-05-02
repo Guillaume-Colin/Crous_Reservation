@@ -38,6 +38,7 @@
                 <option value="Etudiant">Etudiant</option>
                 <option value="Professeur">Professeur</option>
                 <option value="Personnel">Personnel</option>
+                <option value="Personnel">Administrateur</option>
             </select>
         </div>
         <div class="form-group">

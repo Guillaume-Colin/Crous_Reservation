@@ -13,20 +13,23 @@
 </head>
 <body>
 <?php
-// Affichez le message box si le paramètre reservation_success est présent dans l'URL
-if(isset($_GET['reservation_success']) && $_GET['reservation_success'] == 'true') {
+if ((isset($_GET['reservation_success']) && $_GET['reservation_success'] == 'true') ||
+    (isset($_GET['edit_success']) && $_GET['edit_success'] == 'true')) {
+    $message = isset($_GET['reservation_success']) ? '--- Votre réservation a bien été confirmée. ---' 
+    : '----- L\'utilisateur a été ajouté. -----';
     echo '<div class="reservation-message visible" id="reservationMessage">
-    <div class="circle-container">
-        <div class="circle"></div>
-        <svg class="tick" viewBox="0 0 24 24">
-            <path d="M20 6L9 17l-5-5" fill="none"></path>
-        </svg>
-    </div>
-    <span class="reservation-message-close" onclick="fermerMessageBox()">×</span>
-    Votre réservation à bien été confirmée.
-</div>';
+        <div class="circle-container">
+            <div class="circle"></div>
+            <svg class="tick" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5" fill="none"></path>
+            </svg>
+        </div>
+        <span class="reservation-message-close" onclick="fermerMessageBox()">×</span>
+        ' . $message . '
+    </div>';
 }
 ?>
+
 
     <h1 id="titrePrincipal">Bienvenue sur votre espace CROUS Réservation</h1>
     <div id="grandRectangle">
