@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <title>Recherche</title>
     <link rel="stylesheet" href="../public/css/search.css">
+    <!-- <meta http-equiv="refresh" content="3"> -->
 </head>
 <?php include_once("navbar.view.php"); ?>
 <body>

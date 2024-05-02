@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/accueil.css">
+    <!-- <meta http-equiv="refresh" content="3"> -->
     <?php include_once("navbar.view.php"); ?>
 </head>
 <body>
@@ -34,7 +35,7 @@ if(isset($_GET['reservation_success']) && $_GET['reservation_success'] == 'true'
         <a href="../src/search.php"><button class="bouton bouton-ajouter"><b></b></button></a>
 
         <?php
-            foreach ($param["listeReservations"] as $item) {
+                foreach ($param["listeReservations"] as $item) {
                 echo '<div id="sousRectangle">';
                 echo '<h3 id="sousTitre">'.$item->nom_resto.' : '.$item->date_reserve.'</h3>';
                 echo '<a href="./src/Accueil.php?idToDelete='.$item->id_restoCrous.'|'.$item->date_reserve.'"><button class="boutonCarre boutonSupprimer supprimer-image"></button></a>';

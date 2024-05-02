@@ -28,30 +28,25 @@
             $idDessert = $_POST['dessert'];
             if ($idEntree!='' || $idPlat!='' || $idDessert!='') {    
                 // Requete pour inserer la reserve en base    
-                $resultat = exec_request('INSERT INTO RESERVE 
-                    VALUES('.$_SESSION['idResto'].', 
-                        \''.$_SESSION['login'].'\', 
-                        \''.$_SESSION['date'].'\', 
-                            0, 
-                            \''.$_SESSION['plageHoraire'].'\', 
-                            '.$idEntree.',
-                            '.$idPlat.', 
-                            '.$idDessert.')');
+                $resultat = exec_request('INSERT INTO 
+                reserve (id_restoCrous, id_personne, date_reserve, heure_debut_reserve, id_entree, id_plat, id_dessert)
+                VALUES ('.$_SESSION['idResto'].', 
+                    \''.$_SESSION['login'].'\', 
+                    \''.$_SESSION['date'].'\', 
+                    \''.$_SESSION['plageHoraire'].'\', 
+                    '.$idEntree.',
+                    '.$idPlat.', 
+                    '.$idDessert.')');
                 redirect('./Accueil.php?reservation_success=true');
                 
             }
         }
 
         // initialise sans saisie ou les fois suivante si les controles ne sont pas bons
-        $listeEntrees = exec_request('SELECT id_article, nom_article 
-                                        FROM article JOIN menu on (nom_article = entree) 
-                                        order by nom_article asc');
-        $listePlats = exec_request('SELECT id_article, nom_article
-                                    FROM article JOIN menu on (nom_article = plat_principal) 
-                                    order by nom_article asc');
-        $listeDesserts = exec_request('SELECT id_article, nom_article 
-                                        FROM article JOIN menu on (nom_article = dessert) 
-                                        order by nom_article asc');
+        $listeEntrees = exec_request('SELECT id_article, nom_article FROM Article WHERE type_article = "entree" ORDER BY nom_article ASC');
+        $listePlats = exec_request('SELECT id_article, nom_article FROM Article WHERE type_article = "plat" ORDER BY nom_article ASC');
+        $listeDesserts = exec_request('SELECT id_article, nom_article FROM Article WHERE type_article = "dessert" ORDER BY nom_article ASC');
+
 
         $tabParam = array(
             'listeEntrees' => $listeEntrees,

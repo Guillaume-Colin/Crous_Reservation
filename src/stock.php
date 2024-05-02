@@ -14,7 +14,7 @@
     FROM article JOIN menu on (nom_article = entree) 
     order by nom_article asc');
     $listePlats = exec_request('SELECT id_article, nom_article
-    FROM article JOIN menu on (nom_article = plat_principal) 
+    FROM article JOIN menu on (nom_article = plat) 
     order by nom_article asc');
     $listeDesserts = exec_request('SELECT id_article, nom_article 
     FROM article JOIN menu on (nom_article = dessert) 

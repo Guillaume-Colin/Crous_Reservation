@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestion du Stock</title>
   <link rel="stylesheet" href="../public/css/stock.css">
+  <!-- <meta http-equiv="refresh" content="5"> -->
 </head>
 <?php include_once("navbar.view.php"); ?>
 <body>

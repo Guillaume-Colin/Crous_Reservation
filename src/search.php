@@ -5,16 +5,11 @@
     init_php_session();
     ensure_user_is_authentificated();
 
-    $listeResto = [];
-    $nomResto = NULL;
+    // Requête pour récupérer tous les restaurants
+    $listeResto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous');
 
-
-    // Search en base
-    if(isset($_POST['nomResto'])) {
-        $nomResto = $_POST['nomResto'];
-        $listeResto = exec_request('SELECT id_restoCrous, nom_resto, type, description_resto FROM resto_crous WHERE nom_resto like \'%'.$nomResto.'%\'');
-    }
-
+    // Initialisation des variables
+    $nomResto = isset($_POST['nomResto']) ? $_POST['nomResto'] : NULL;
 
     // Résultat de la recherche
     $tabParam = array(
@@ -22,6 +17,6 @@
         'listeRestos' => $listeResto
     );
 
-    //Affiche résultat
+    // Affichage du résultat
     view("search", $tabParam);
 ?>

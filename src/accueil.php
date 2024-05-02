@@ -31,7 +31,7 @@ if(isset($_GET['idToDelete'])) {
 
 //Affiche les réservations
 $tabReservations = [];
-$tabReservations = exec_request('SELECT R.id_restoCrous, id_personne, date_reserve, deuxieme_reserve, nom_resto
+$tabReservations = exec_request('SELECT R.id_restoCrous, id_personne, date_reserve, nom_resto
                                  FROM RESERVE R
                                  JOIN RESTO_CROUS RC ON (R.id_restoCrous = RC.id_restoCrous) 
                                  WHERE id_personne = \''.$_SESSION['login'].'\'

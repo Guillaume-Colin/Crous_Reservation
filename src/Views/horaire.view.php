@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/horaire.css">
+    <!-- <meta http-equiv="refresh" content="3"> -->
 </head>
 
 <script>
