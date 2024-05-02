@@ -116,3 +116,7 @@ input[type="submit"]:hover {
 }
 
 
+.button-active {
+    background-color: #B00000; /* Changer la couleur de fond du bouton actif selon votre préférence */
+    color: #000; /* Changer la couleur du texte pour assurer la lisibilité */
+}
