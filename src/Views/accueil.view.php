@@ -31,9 +31,9 @@ if(isset($_GET['reservation_success']) && $_GET['reservation_success'] == 'true'
     <h1 id="titrePrincipal">Bienvenue sur votre espace CROUS Réservation</h1>
     <div id="grandRectangle">
         <h2 id="titre"><u>Mes réservations :</u></h2>
+        <a href="../src/user.php"><button class="editUser bouton"><b></b></button></a>
         <a href="../src/Stock.php"><button id="boutonStock"><b></b></button></a>
         <a href="../src/search.php"><button class="bouton bouton-ajouter"><b></b></button></a>
-
         <?php
                 foreach ($param["listeReservations"] as $item) {
                 echo '<div id="sousRectangle">';

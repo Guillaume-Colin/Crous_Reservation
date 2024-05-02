@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    /* Autres variables CSS */
+}
+
+/* Styles pour le mode nuit */
+html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    /* Autres variables CSS */
+}
+
+
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.rectangle {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 80%; /* Largeur fixe */
+    height: 400px; /* Hauteur fixe */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions */
+    margin: 0 auto;
+    overflow: hidden;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-ajouter, .button-modifier, .button-supprimer {
+    flex-grow: 1;
+    padding: 10px 20px;
+    color: black;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    cursor: pointer; /* Ajout d'un curseur pointeur */
+}
+.button-modifier {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.button-ajouter:hover, .button-modifier:hover, .button-supprimer:hover {
+    background-color: #B00000;
+    color: white; 
+}
+
+.rectangle:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button-ajouter {
+    border-top-left-radius: 8px;
+}
+.button-supprimer {
+    border-top-right-radius: 8px;
+}
+
+
+
+input[type="text"], select {
+    width: 45%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #B00000;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #B00000;
+}
+
+.rectangle form {
+    padding: 50px; /* Ajouter une marge intérieure */
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select {
+    width: calc(45% - 5px); /* Réduire légèrement la largeur pour éviter le chevauchement */
+}
