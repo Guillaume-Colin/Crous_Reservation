@@ -10,15 +10,10 @@
     $idPlat = null;
     $idDessert = null;
 
-    $listeEntrees = exec_request('SELECT id_article, nom_article 
-    FROM article JOIN menu on (nom_article = entree) 
-    order by nom_article asc');
-    $listePlats = exec_request('SELECT id_article, nom_article
-    FROM article JOIN menu on (nom_article = plat) 
-    order by nom_article asc');
-    $listeDesserts = exec_request('SELECT id_article, nom_article 
-    FROM article JOIN menu on (nom_article = dessert) 
-    order by nom_article asc');
+    $listeEntrees = exec_request('SELECT id_article, nom_article FROM Article WHERE type_article = "entree" ORDER BY nom_article ASC');
+    $listePlats = exec_request('SELECT id_article, nom_article FROM Article WHERE type_article = "plat" ORDER BY nom_article ASC');
+    $listeDesserts = exec_request('SELECT id_article, nom_article FROM Article WHERE type_article = "dessert" ORDER BY nom_article ASC');
+    
 
     $stockEntrees = null;
 
@@ -38,6 +33,9 @@
 
     $tabParam = array(
         'stockEntrees' => $stockEntrees,
+        'stockPlats' => $stockEntrees,
+        'stockDesserts' => $stockEntrees,
+
         'listeEntrees' => $listeEntrees,
         'listePlats' => $listePlats,
         'listeDesserts' => $listeDesserts,

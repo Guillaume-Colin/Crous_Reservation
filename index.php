@@ -29,6 +29,6 @@ isset($_POST['password']) && !empty($_POST['password'])) {
     }
 }
 
-view("index");
+view2("index");
 
 ?>
