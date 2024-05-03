@@ -63,7 +63,7 @@
                     </select>
                 </div>
                 <div class="footer">
-                    <button class="cancel-button" type="button" onclick="window.location.href='./src/horaire.php'">Annuler</button>
+                    <button class="cancel-button" type="button" onclick="window.location.href='./horaire.php'">Annuler</button>
                     <button class="validate-button" type="submit" onclick="afficherMessageBox()">Réserver</button>
                 </div>
             </div>

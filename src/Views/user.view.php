@@ -12,7 +12,6 @@
 </head>
 <body>
     <?php include_once("navbar.view.php"); ?>
-    <form method="POST">
         <input type="hidden" name="controleMenu" value="O"/>
         <div class="container">
             <div class="header">
@@ -26,7 +25,30 @@
                 </div>
                 <form id="form-ajouter" class="form-container" style="display: none;">
                     <div class="form-group1">
-                        <input type="text" name="nouveau_nom" placeholder="nom">
+                        <div class="form-group">
+                            <input type="text" name="nom" placeholder="Nom">
+                            <input type="text" name="prenom" placeholder="Prénom">
+                        </div>
+                        <div class="form-group">
+                            <select name="role">
+                                <option value="" selected disabled>Role</option>
+                                <option value="Etudiant">Etudiant</option>
+                                <option value="Professeur">Professeur</option>
+                                <option value="Personnel">Personnel</option>
+                                <option value="Administrateur">Administrateur</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="identifiant" placeholder="Identifiant">
+                            <input type="password" name="mdp" id="mdp" placeholder="Mot de passe"> 
+                        </div>
+                        <div class="form-group">
+                            <span class="toggle-password" id="togglePassword">👁️</span>  
+                        </div>
+                        <div class="form-group">
+                            <button class="cancel-button" name="supprimer" value="Supprimer" type="button" onclick="window.location.href='./accueil.php'">Annuler</button>
+                            <input class="validate-button" type="submit" name="valider" value="Valider">
+                        </div>
                     </div>
                 </form>
 
@@ -42,6 +64,5 @@
                 </form>
             </div>
         </div>
-    </form>
 </body>
 </html>

@@ -24,12 +24,10 @@
         $identifiant = $_POST['identifiant'];
         $mdp = $_POST['mdp'];
 
-        // Validation de l'identifiant avec la regex
-        if (!preg_match('/^[EPC]\d{6}[A-Z]$/', $identifiant)) {
-            // Identifiant invalide
-            // Vous pouvez gérer cette erreur comme vous le souhaitez
-            echo "Identifiant invalide";
-        } else {
+        // if (!preg_match('/^[EPC]\d{6}[A-Z]$/', $identifiant)) {
+        //     echo "Identifiant invalide";
+         } 
+        else {
             // Identifiant valide, procédez à l'insertion dans la base de données
             if ($nom != '' || $prenom != '' || $role != '' || $identifiant != '' || $mdp != '') {    
                 // Requete pour ajouter utilisateur    
@@ -43,8 +41,6 @@
                 redirect('./Accueil.php?edit_success=true');
             }
         }
-    }
-
     view('user');
 ?>
 
