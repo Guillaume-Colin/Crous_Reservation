@@ -34,9 +34,9 @@ html.dark {
 .rectangle {
     border: 2px solid black;
     border-radius: 10px;
-    width: 80%; /* Largeur fixe */
-    height: 400px; /* Hauteur fixe */
-    box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions */
+    width: 80%; 
+    height: 400px; 
+    box-sizing: border-box;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -51,22 +51,17 @@ html.dark {
     color: black;
     text-align: center;
     border-bottom: 1px solid #000;
-    cursor: pointer; /* Ajout d'un curseur pointeur */
+    cursor: pointer;
 }
 .button-modifier {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
 }
 
-/* .button-ajouter:hover, .button-modifier:hover, .button-supprimer:hover {
-    background-color: #B00000;
-    color: white; 
-} */
-
-.rectangle:hover, .validate-button:hover, .cancel-button:hover {
+/* .rectangle:hover, .validate-button:hover, .cancel-button:hover {
     transform: translate(0, -5px);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .button-ajouter {
     border-top-left-radius: 8px;
@@ -101,11 +96,9 @@ select
 {
     flex-grow: 1;
     padding-left: 95%;
-    /* margin-bottom: -10px; */
-    margin-top: -15px;
-    /* padding: 8px; */
-    /* border-radius: 5px; */
-    /* border: 1px solid #ccc; */
+    
+    margin-top: -30px;
+
     box-sizing: border-box;
 }
 
@@ -130,7 +123,7 @@ select
 
 
 .rectangle form {
-    padding: 50px; /* Ajouter une marge intérieure */
+    padding: 50px; 
 }
 
 .form-group {
@@ -142,8 +135,93 @@ select
 .form-group input[type="text"],
 .form-group input[type="password"],
 .form-group select {
-    width: calc(45% - 5px); /* Réduire légèrement la largeur pour éviter le chevauchement */
+    width: calc(45% - 5px);
 }
 
+
+
+.recherche-button
+{
+    border: none;
+    border-radius: 5px;
+    background-color: #B00000;
+    color: white;
+}
+
+.form-group2
+{
+    margin-top: -30px;
+}
+
+
+
+#sousTitre {
+    font-size: 18px;
+    padding-left: 10px;
+    margin-top: 0px; 
+    margin-bottom: 5px;
+    flex-grow: 1; /* Pour pousser le bouton supprimer à droite */
+
+}
+
+#sousRectangle {
+    border: #000 solid 1px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 1px; 
+    box-sizing: border-box;
+    height: 50px; 
+    align-items: center; 
+}
+
+#sousRectangle:hover {
+    background-color: #FF9955;
+    transition: transform 0.3s, box-shadow 0.3s; /* Ajouter la transition uniquement lors du survol */
+}
+
+.form-group3 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    bottom: -60px;
+}
+
+
+/* .boutonSupprimer:hover, #sousRectangle:hover, #grandRectangle:hover{
+    transform: translate(0, -5px); 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pour les navigateurs WebKit */
+.form-group3::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+}
+
+.form-group3::-webkit-scrollbar-track {
+    border-radius: 10px; /* Coins arrondis */
+}
+
+.form-group3::-webkit-scrollbar-thumb {
+    background-color: #b00000; /* Couleur de la barre de défilement */
+    border-radius: 10px; /* Coins arrondis */
+}
 
 

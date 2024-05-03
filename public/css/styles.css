@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffffff; /* Couleur du premier fichier */
+
 }
 
 .container {
@@ -59,10 +59,14 @@ textarea {
     border-radius: 10px;
     padding: 100px;
     box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 400px;
     width: 100%;
 }
+
 
 .logo {
     position: absolute;

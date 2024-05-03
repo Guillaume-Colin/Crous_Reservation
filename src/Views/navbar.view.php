@@ -18,9 +18,10 @@
             </a>
         </div>
         <div class="right-content">
-            <span data-content="<?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?>"><?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?></span>
+            <span data-content="<?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?>">
+            <?php echo $_SESSION['nom'].' '.$_SESSION['prenom'].' ['.$_SESSION['login'].']' ?></span>
             <button class="toggle">Dark mode</button>
-            <a href="./index.php?Logout=O">
+            <a href="../index.php?Logout=O">
                 <img src="../public/img/logout.png">
             </a>
         </div>

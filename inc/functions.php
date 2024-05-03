@@ -45,12 +45,11 @@ function ensure_user_is_authentificated()
 
 function view($name,$param = null)
 {
-        include("../src/Views/$name.view.php");
+    include("../src/Views/$name.view.php");
 }
 
 function view2($name,$param = null)
 {
-        include("./src/Views/$name.view.php");
+    include("./src/Views/$name.view.php");
 }
-
-?>
+?> 
