@@ -91,7 +91,7 @@
 
                 <!-- Formulaire de suppression -->
                 <form id="form-supprimer" class="form-container" style="display: none;">
-                -------- PAGE EN CONSTRUCTION ---------
+                    <input class="input-delete" type="text" name="nom" placeholder="User ID">
                     <div class="form-group3" style="overflow-y: auto; max-height: 200px;">
                         <?php foreach ($param["listeUsers"] as $user): ?>
                             <div id="sousRectangle">
