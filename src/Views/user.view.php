@@ -92,10 +92,13 @@
                 <!-- Formulaire de suppression -->
                 <form id="form-supprimer" class="form-container" style="display: none;">
                     <input class="input-delete" type="text" name="nom" placeholder="User ID">
+                    <input class="recherche-button-delete" type="submit" name="valider1" value="Recherche">
                     <div class="form-group3" style="overflow-y: auto; max-height: 200px;">
                         <?php foreach ($param["listeUsers"] as $user): ?>
                             <div id="sousRectangle">
                                 <h3 id="sousTitre"><?php echo $user->nom . ' ' . $user->prenom; ?> (<?php echo $user->role; ?>)</h3>
+                                <button class="boutonCarre boutonSupprimer supprimer-image"></button></a>
+                                <!-- <?php echo '<a href="./src/Accueil.php?idToDelete='.$item->id_personne.'"><button class="boutonCarre boutonSupprimer supprimer-image"></button></a>';?> -->
                             </div>
                         <?php endforeach; ?>
                     </div>

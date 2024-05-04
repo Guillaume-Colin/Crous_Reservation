@@ -7,6 +7,20 @@ require_once('./../inc/functions.php');
 init_php_session();
 ensure_user_is_authentificated();
 
+
+
+
+//Suppression d'un utilisateur
+// if(isset($_GET['idToDelete'])) {
+//     $id_personne = $_GET['idToDelete'];
+//     exec_request('DELETE FROM PERSONNE 
+//                   WHERE id_personne = \''.$id_personne.'\''
+//     );
+// }
+
+
+
+
 $role = null;
 $nom = null;
 $prenom = null;
