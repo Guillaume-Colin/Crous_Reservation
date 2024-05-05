@@ -155,7 +155,7 @@ select
 
 
 
-#sousTitre {
+.sousTitre {
     font-size: 18px;
     padding-left: 10px;
     margin-top: 0px; 
@@ -164,7 +164,7 @@ select
 
 }
 
-#sousRectangle {
+.sousRectangle {
     display: flex; /* Utiliser flexbox */
     justify-content: space-between; /* Distribuer l'espace entre les éléments */
     align-items: center;
@@ -177,7 +177,7 @@ select
     height: 50px;
 }
 
-#sousRectangle:hover {
+.sousRectangle:hover {
     background-color: #FF9955;
     transition: transform 0.3s, box-shadow 0.3s; /* Ajouter la transition uniquement lors du survol */
 }
@@ -224,7 +224,7 @@ select
     width: 400px !important;
 }
 
-.recherche-button-delete
+.search-button-delete
 {
     padding: 8px 10px;
     border: none;
@@ -240,7 +240,14 @@ select
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-
+#form-recherche
+{
+    padding-bottom: 1px;
+}
+#form-supprimer
+{
+    padding-top: 1px;
+}
 
 
 /* Pour les navigateurs WebKit */

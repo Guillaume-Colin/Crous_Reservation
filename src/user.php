@@ -7,20 +7,6 @@ require_once('./../inc/functions.php');
 init_php_session();
 ensure_user_is_authentificated();
 
-
-
-
-//Suppression d'un utilisateur
-// if(isset($_GET['idToDelete'])) {
-//     $id_personne = $_GET['idToDelete'];
-//     exec_request('DELETE FROM PERSONNE 
-//                   WHERE id_personne = \''.$id_personne.'\''
-//     );
-// }
-
-
-
-
 $role = null;
 $nom = null;
 $prenom = null;
@@ -40,7 +26,7 @@ if ($controle == "O") {
     $mdp = $_POST['mdp'];
 
     // Vérifier que les champs ne sont pas vides
-    if ($nom!= '' || $prenom!= '' || $role!= '' || $identifiant!= '' || $mdp!= '') {   
+    if ($nom != '' || $prenom != '' || $role != '' || $identifiant != '' || $mdp != '') {   
         // Requete pour ajouter utilisateur    
         $resultat = exec_request('INSERT INTO
             Personne (id_personne, nom, prenom, role, mdp)
@@ -53,39 +39,28 @@ if ($controle == "O") {
     } 
 }
 
-
-
-
-
-
-
-
-//Suppression d'une réservation
-// if(isset($_GET['idToDelete'])) {
-//     $idResto = explode("|", $_GET['idToDelete'])[0];
-//     $dateReserve = explode("|", $_GET['idToDelete'])[1];
-//     exec_request('DELETE FROM RESERVE 
-//                   WHERE id_personne = \''.$_SESSION['login'].'\'
-//                   AND id_restoCrous = \''.$idResto.'\'
-//                   AND date_reserve = \''.$dateReserve.'\''
-//     );
-// }
-
-
-//Affiche les réservations
-    $tabUsers = [];
-    $tabUsers = exec_request('SELECT id_personne, nom, prenom, role
-                                    FROM PERSONNE
-                                    --  WHERE id_personne = :id_personne
-                                    ORDER BY nom'
-
-        
+if(isset($_POST['idToDelete'])) {
+    $id_personne = explode("|", $_POST['idToDelete'])[0];
+    $role = explode("|", $_POST['idToDelete'])[1];
+    exec_request('DELETE FROM PERSONNE 
+                  WHERE id_personne = \''.$id_personne.'\'
+                  AND role = \''.$role.'\''
     );
+}
 
-    $tabParam = array(
-        'listeUsers' => $tabUsers
-    );
+// Requête pour récupérer tous les utilisateurs
+$listeUsers = [];
+$listeUsers = exec_request('SELECT id_personne, nom, prenom, role FROM PERSONNE ORDER BY nom');
 
 
-    view('user', $tabParam);
+// Initialisation des variables
+$nomUser = isset($_POST['nomUser']) ? $_POST['nomUser'] : NULL;
+
+$tabParam = array(
+    'nomUser' => $nomUser,
+    'listeUsers' => $listeUsers
+);
+
+view('user', $tabParam);
 ?>
+ 
