@@ -54,7 +54,6 @@
             </div>
         </form>
 
-
         <!-- Formulaire de modification -->
         <form id="form-modifier" class="form-container" style="display: none;">
             <div class="form-group2">
@@ -83,10 +82,8 @@
                     <span class="toggle-password" id="togglePassword">👁️</span>  
                 </div>
                 <div class="form-group">
-                    <!-- <input type="text" placeholder="Entrer le nom d'un restaurant" class="validate-button" name="nomUser" value="<?php echo $param["nomUser"] ?>"> -->
                     <button class="cancel-button" name="supprimer" value="Supprimer" type="button" onclick="window.location.href='./accueil.php'">Annuler</button>
                     <input class="recherche-button-delete" type="submit" name="valider1" value="Recherche">
-                    <!-- <input class="recherche-button-delete" type="submit" name="user" value="Recherche"> -->
                 </div>
             </div>
         </form>
@@ -96,10 +93,6 @@
             <input class="input-delete" type="text" name="nomUser" placeholder="User ID" value="<?php echo $param["nomUser"] ?>">
             <button class="search-button-delete" type="submit" value="Recherche" form="form-recherche">Recherche</button>
         </form>
-
-
-
-
 
         <!-- Formulaire de suppression -->
         <form id="form-supprimer" class="form-container" style="display: none;" method="POST"> 
