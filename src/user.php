@@ -48,19 +48,28 @@ if(isset($_POST['idToDelete'])) {
     );
 }
 
-// Requête pour récupérer tous les utilisateurs
-$listeUsers = [];
-$listeUsers = exec_request('SELECT id_personne, nom, prenom, role FROM PERSONNE ORDER BY nom');
-
-
 // Initialisation des variables
 $nomUser = isset($_POST['nomUser']) ? $_POST['nomUser'] : NULL;
 
+if ($nomUser !== NULL) {
+    // Recherche d'utilisateurs par nom, prénom ou ID
+    $listeUsers = exec_request("SELECT id_personne, nom, prenom, role FROM PERSONNE WHERE id_personne LIKE '%$nomUser%' OR nom LIKE '%$nomUser%' OR prenom LIKE '%$nomUser%' ORDER BY nom");
+} else {
+    // Requête pour récupérer tous les utilisateurs
+    $listeUsers = exec_request('SELECT id_personne, nom, prenom, role FROM PERSONNE ORDER BY nom');
+}
+
+// Déterminer quel formulaire afficher
+$formulaireAAfficher = "form-ajouter"; // Par défaut, afficher le formulaire d'ajout
+if (!empty($listeUsers)) {
+    $formulaireAAfficher = "form-supprimer"; // Si des utilisateurs sont trouvés, afficher le formulaire de suppression
+}
+
 $tabParam = array(
     'nomUser' => $nomUser,
-    'listeUsers' => $listeUsers
+    'listeUsers' => $listeUsers,
+    'formulaireAAfficher' => $formulaireAAfficher
 );
 
 view('user', $tabParam);
 ?>
- 

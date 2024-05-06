@@ -91,15 +91,18 @@
             </div>
         </form>
 
-
         <!-- Formulaire de recherche -->
-        <form action="#" method="POST" id="form-recherche">
+        <form action="#form-supprimer" method="POST" id="form-recherche">
             <input class="input-delete" type="text" name="nomUser" placeholder="User ID" value="<?php echo $param["nomUser"] ?>">
-            <button class="search-button-delete" type="submit" value="Recherche" form="form-supprimer">Recherche</button>
+            <button class="search-button-delete" type="submit" value="Recherche" form="form-recherche">Recherche</button>
         </form>
 
+
+
+
+
         <!-- Formulaire de suppression -->
-        <form id="form-supprimer" class="form-container" style="display: none;" method="POST">
+        <form id="form-supprimer" class="form-container" style="display: none;" method="POST"> 
             <div class="form-group3" style="overflow-y: auto; max-height: 200px;">
                 <?php
                 if(isset($_POST["nomUser"]) && empty($param["listeUsers"])) {
