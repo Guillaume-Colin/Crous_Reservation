@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            // Mettre en surbrillance le bouton cliqué
+            // Réinitialiser tous les boutons à leur état par défaut
             buttons.forEach(function(btn) {
                 btn.style.backgroundColor = "";
-                btn.style.color = "";
+                btn.classList.remove("white-text"); // Supprimer la classe white-text de tous les boutons
             });
+
+            // Mettre en surbrillance le bouton cliqué et définir la couleur du texte sur blanc
             event.target.style.backgroundColor = "#B00000";
-            event.target.style.color = "";
+            event.target.classList.add("white-text"); // Ajouter la classe white-text au bouton cliqué
         });
     });
 

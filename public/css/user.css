@@ -48,7 +48,7 @@ html.dark {
 .button-ajouter, .button-modifier, .button-supprimer {
     flex-grow: 1;
     padding: 10px 20px;
-    color: black;
+    /* color: black; */
     text-align: center;
     border-bottom: 1px solid #000;
     cursor: pointer;
@@ -56,6 +56,10 @@ html.dark {
 .button-modifier {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
+}
+
+.white-text {
+    color: white !important;
 }
 
 /* .rectangle:hover, .validate-button:hover, .cancel-button:hover {
@@ -163,7 +167,7 @@ select
     flex-grow: 1; /* Pour pousser le bouton supprimer à droite */
 
 }
-
+ 
 .sousRectangle {
     display: flex; /* Utiliser flexbox */
     justify-content: space-between; /* Distribuer l'espace entre les éléments */
@@ -186,7 +190,7 @@ select
 .boutonCarre {
     width: 30px;
     height: 30px;
-    margin-left: 10px;
+    margin-left: 40px !important;
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -234,7 +238,7 @@ select
     margin-left: 5px;
 }
 
-.boutonSupprimer:hover, #sousRectangle:hover, #grandRectangle:hover, 
+#sousRectangle:hover, #grandRectangle:hover, 
 .recherche-button-delete:hover, .input-delete:hover, .boutonCarre:hover{
     transform: translate(0, -5px); 
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);

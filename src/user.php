@@ -36,17 +36,19 @@ if ($controle == "O") {
                 \''.$role.'\',
                 \''.$mdp.'\')');
         redirect('Accueil.php?edit_success=true');
-    } 
+    }
 }
 
-if(isset($_POST['idToDelete'])) {
+if (isset($_POST['deleteUser'])) {
     $id_personne = explode("|", $_POST['idToDelete'])[0];
     $role = explode("|", $_POST['idToDelete'])[1];
-    exec_request('DELETE FROM PERSONNE 
-                  WHERE id_personne = \''.$id_personne.'\'
-                  AND role = \''.$role.'\''
+    exec_request('DELETE FROM PERSONNE
+                  WHERE id_personne = \'' . $id_personne . '\'
+                  AND role = \'' . $role . '\''
     );
+    redirect('Accueil.php?delete_success=true');
 }
+
 
 // Initialisation des variables
 $nomUser = isset($_POST['nomUser']) ? $_POST['nomUser'] : NULL;

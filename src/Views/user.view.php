@@ -97,14 +97,17 @@
         <!-- Formulaire de suppression -->
         <form id="form-supprimer" class="form-container" style="display: none;" method="POST"> 
             <div class="form-group3" style="overflow-y: auto; max-height: 200px;">
-                <?php
-                if(isset($_POST["nomUser"]) && empty($param["listeUsers"])) {
+            <?php
+                if (isset($_POST["nomUser"]) && empty($param["listeUsers"])) {
                     echo '<center><p>Aucun utilisateur trouvé</p></center>';
-                } elseif (!empty($param["listeUsers"])) { 
+                } elseif (!empty($param["listeUsers"])) {
                     foreach ($param["listeUsers"] as $user) {
                         echo '<div class="sousRectangle">';
                         echo '<h3 class="sousTitre">' . $user->nom . ' ' . $user->prenom . ' (' . $user->role . ')</h3>';
-                        echo '<a href="./src/Accueil.php?idToDelete=' .$user->id_personne.'|'.$user->role. '"><button class="boutonCarre boutonSupprimer supprimer-image"></button></a>';
+                        echo '<form method="POST" action="user.php">';
+                        echo '<input type="hidden" name="idToDelete" value="' . $user->id_personne . '|' . $user->role . '">';
+                        echo '<button type="submit" class="boutonCarre boutonSupprimer supprimer-image" name="deleteUser"></button>';
+                        echo '</form>';
                         echo '</div>';
                     }
                 }

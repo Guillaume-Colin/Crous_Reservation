@@ -14,9 +14,19 @@
 <body>
 <?php
 if ((isset($_GET['reservation_success']) && $_GET['reservation_success'] == 'true') ||
-    (isset($_GET['edit_success']) && $_GET['edit_success'] == 'true')) {
-    $message = isset($_GET['reservation_success']) ? '--- Votre réservation a bien été confirmée. ---' 
-    : '----- L\'utilisateur a été ajouté. -----';
+    (isset($_GET['edit_success']) && $_GET['edit_success'] == 'true') ||
+    (isset($_GET['delete_success']) && $_GET['delete_success'] == 'true')) {
+
+    // Déterminer le message en fonction de la variable GET
+    $message = '';
+    if (isset($_GET['reservation_success'])) {
+        $message = '--- Votre réservation a bien été confirmée. ---';
+    } elseif (isset($_GET['edit_success'])) {
+        $message = '----- L\'utilisateur a été ajouté. -----';
+    } elseif (isset($_GET['delete_success'])) {
+        $message = '----- L\'utilisateur a été supprimé. -----';
+    }
+
     echo '<div class="reservation-message visible" id="reservationMessage">
         <div class="circle-container">
             <div class="circle"></div>
@@ -29,6 +39,7 @@ if ((isset($_GET['reservation_success']) && $_GET['reservation_success'] == 'tru
     </div>';
 }
 ?>
+
 
 
     <h1 id="titrePrincipal">Bienvenue sur votre espace CROUS Réservation</h1>
